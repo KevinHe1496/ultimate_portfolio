@@ -1,9 +1,4 @@
-//
-//  ContentView.swift
-//  UltimatePortfolio
-//
-//  Created by Kevin Heredia on 19/3/25.
-//
+
 
 import SwiftUI
 
