@@ -6,17 +6,26 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C9BBA6AD2D8CB39300C1D499 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9BBA6A32D8CB39300C1D499 /* Preview Assets.xcassets */; };
+		C9BBA6AE2D8CB39300C1D499 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9BBA6A52D8CB39300C1D499 /* Assets.xcassets */; };
+		C9BBA6AF2D8CB39300C1D499 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA6A62D8CB39300C1D499 /* ContentView.swift */; };
+		C9BBA6B02D8CB39300C1D499 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA6A72D8CB39300C1D499 /* DataController.swift */; };
+		C9BBA6B12D8CB39300C1D499 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA6A82D8CB39300C1D499 /* Main.xcdatamodeld */; };
+		C9BBA6B22D8CB39300C1D499 /* UltimatePortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA6AA2D8CB39300C1D499 /* UltimatePortfolioApp.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		C9BBA6A32D8CB39300C1D499 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C9BBA6A52D8CB39300C1D499 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C9BBA6A62D8CB39300C1D499 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C9BBA6A72D8CB39300C1D499 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		C9BBA6A92D8CB39300C1D499 /* UltimatePortfolio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UltimatePortfolio.entitlements; sourceTree = "<group>"; };
+		C9BBA6AA2D8CB39300C1D499 /* UltimatePortfolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioApp.swift; sourceTree = "<group>"; };
+		C9BBA6AC2D8CB39300C1D499 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
+		C9BBA6B32D8CB4B200C1D499 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C9F1ED462D8B97EC006AAF11 /* UltimatePortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		C9F1ED482D8B97EC006AAF11 /* UltimatePortfolio */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = UltimatePortfolio;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C9F1ED432D8B97EC006AAF11 /* Frameworks */ = {
@@ -29,10 +38,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C9BBA6A42D8CB39300C1D499 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C9BBA6A32D8CB39300C1D499 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C9BBA6AB2D8CB39300C1D499 /* UltimatePortfolio */ = {
+			isa = PBXGroup;
+			children = (
+				C9BBA6B32D8CB4B200C1D499 /* Info.plist */,
+				C9BBA6A42D8CB39300C1D499 /* Preview Content */,
+				C9BBA6AA2D8CB39300C1D499 /* UltimatePortfolioApp.swift */,
+				C9BBA6A62D8CB39300C1D499 /* ContentView.swift */,
+				C9BBA6A72D8CB39300C1D499 /* DataController.swift */,
+				C9BBA6A82D8CB39300C1D499 /* Main.xcdatamodeld */,
+				C9BBA6A92D8CB39300C1D499 /* UltimatePortfolio.entitlements */,
+				C9BBA6A52D8CB39300C1D499 /* Assets.xcassets */,
+			);
+			path = UltimatePortfolio;
+			sourceTree = "<group>";
+		};
 		C9F1ED3D2D8B97EC006AAF11 = {
 			isa = PBXGroup;
 			children = (
-				C9F1ED482D8B97EC006AAF11 /* UltimatePortfolio */,
+				C9BBA6AB2D8CB39300C1D499 /* UltimatePortfolio */,
 				C9F1ED472D8B97EC006AAF11 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,9 +91,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				C9F1ED482D8B97EC006AAF11 /* UltimatePortfolio */,
 			);
 			name = UltimatePortfolio;
 			packageProductDependencies = (
@@ -109,6 +138,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9BBA6AD2D8CB39300C1D499 /* Preview Assets.xcassets in Resources */,
+				C9BBA6AE2D8CB39300C1D499 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +150,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9BBA6AF2D8CB39300C1D499 /* ContentView.swift in Sources */,
+				C9BBA6B02D8CB39300C1D499 /* DataController.swift in Sources */,
+				C9BBA6B12D8CB39300C1D499 /* Main.xcdatamodeld in Sources */,
+				C9BBA6B22D8CB39300C1D499 /* UltimatePortfolioApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +287,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UltimatePortfolio/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -291,6 +327,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UltimatePortfolio/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -339,6 +376,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C9BBA6A82D8CB39300C1D499 /* Main.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C9BBA6AC2D8CB39300C1D499 /* Main.xcdatamodel */,
+			);
+			currentVersion = C9BBA6AC2D8CB39300C1D499 /* Main.xcdatamodel */;
+			path = Main.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C9F1ED3E2D8B97EC006AAF11 /* Project object */;
 }
