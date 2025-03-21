@@ -13,6 +13,9 @@
 		C9BBA6B02D8CB39300C1D499 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA6A72D8CB39300C1D499 /* DataController.swift */; };
 		C9BBA6B12D8CB39300C1D499 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA6A82D8CB39300C1D499 /* Main.xcdatamodeld */; };
 		C9BBA6B22D8CB39300C1D499 /* UltimatePortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA6AA2D8CB39300C1D499 /* UltimatePortfolioApp.swift */; };
+		C9E0EB252D8DCFE0004539E1 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E0EB242D8DCFE0004539E1 /* SidebarView.swift */; };
+		C9E0EB272D8DCFE6004539E1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E0EB262D8DCFE6004539E1 /* DetailView.swift */; };
+		C9E0EB292D8DD1F5004539E1 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E0EB282D8DD1F5004539E1 /* Filter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		C9BBA6AA2D8CB39300C1D499 /* UltimatePortfolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioApp.swift; sourceTree = "<group>"; };
 		C9BBA6AC2D8CB39300C1D499 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
 		C9BBA6B32D8CB4B200C1D499 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C9E0EB242D8DCFE0004539E1 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		C9E0EB262D8DCFE6004539E1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		C9E0EB282D8DD1F5004539E1 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		C9F1ED462D8B97EC006AAF11 /* UltimatePortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -52,8 +58,11 @@
 				C9BBA6B32D8CB4B200C1D499 /* Info.plist */,
 				C9BBA6A42D8CB39300C1D499 /* Preview Content */,
 				C9BBA6AA2D8CB39300C1D499 /* UltimatePortfolioApp.swift */,
-				C9BBA6A62D8CB39300C1D499 /* ContentView.swift */,
+				C9E0EB282D8DD1F5004539E1 /* Filter.swift */,
 				C9BBA6A72D8CB39300C1D499 /* DataController.swift */,
+				C9E0EB242D8DCFE0004539E1 /* SidebarView.swift */,
+				C9BBA6A62D8CB39300C1D499 /* ContentView.swift */,
+				C9E0EB262D8DCFE6004539E1 /* DetailView.swift */,
 				C9BBA6A82D8CB39300C1D499 /* Main.xcdatamodeld */,
 				C9BBA6A92D8CB39300C1D499 /* UltimatePortfolio.entitlements */,
 				C9BBA6A52D8CB39300C1D499 /* Assets.xcassets */,
@@ -150,8 +159,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9E0EB292D8DD1F5004539E1 /* Filter.swift in Sources */,
 				C9BBA6AF2D8CB39300C1D499 /* ContentView.swift in Sources */,
+				C9E0EB272D8DCFE6004539E1 /* DetailView.swift in Sources */,
 				C9BBA6B02D8CB39300C1D499 /* DataController.swift in Sources */,
+				C9E0EB252D8DCFE0004539E1 /* SidebarView.swift in Sources */,
 				C9BBA6B12D8CB39300C1D499 /* Main.xcdatamodeld in Sources */,
 				C9BBA6B22D8CB39300C1D499 /* UltimatePortfolioApp.swift in Sources */,
 			);

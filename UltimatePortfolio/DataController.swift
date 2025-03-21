@@ -13,6 +13,8 @@ class DataController: ObservableObject {
     // Contenedor que maneja el almacenamiento persistente con CloudKit
     let container: NSPersistentCloudKitContainer
     
+    @Published var selectedFilter: Filter? = Filter.all
+    
     // Propiedad estática para proporcionar un DataController con datos de prueba
     static var preview: DataController = {
         // Se crea una instancia de DataController en modo memoria (sin almacenamiento persistente)
@@ -31,7 +33,7 @@ class DataController: ObservableObject {
         // Se crea un contenedor persistente llamado "Main"
         container = NSPersistentCloudKitContainer(name: "Main")
         
-        // Si la base de datos es solo en memoria (para pruebas), se configura sin almacenamiento físico
+        // Si la opción inMemory es true, Core Data guardará los datos solo en memoria (RAM) y no en el disco. Esto significa que los datos se borrarán cuando cierres la app.
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(filePath: "/dev/null")
         }
