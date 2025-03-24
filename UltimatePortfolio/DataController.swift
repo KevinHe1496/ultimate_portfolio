@@ -39,6 +39,13 @@ class DataController: ObservableObject {
             container.persistentStoreDescriptions.first?.url = URL(filePath: "/dev/null")
         }
         
+        container.viewContext.automaticallyMergesChangesFromParent = true
+        container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
+        
+        container.persistentStoreDescriptions.first?.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+        
+        NotificationCenter.default.addObserver(forName: .NSPersistentStoreRemoteChange, object: container.persistentStoreCoordinator, queue: .main, using: remoteStoreChange)
+        
         // Carga los almacenes persistentes y maneja errores si ocurren
         container.loadPersistentStores { storeDescription, error in
             if let error {
@@ -47,7 +54,11 @@ class DataController: ObservableObject {
         }
     }
     
-    // Método que genera datos de ejemplo en la base de datos
+    func remoteStoreChange(_ notification: Notification) {
+        objectWillChange.send()
+    }
+    
+    /// Método que genera datos de ejemplo en la base de datos
     func createSampleData() {
         let viewContext = container.viewContext // Contexto de vista de Core Data
         
@@ -75,7 +86,7 @@ class DataController: ObservableObject {
         try? viewContext.save()
     }
     
-    // Método para guardar cambios en la base de datos
+    /// Método para guardar cambios en la base de datos
     func save() {
         // Verifica si hay cambios en el contexto antes de intentar guardarlos
         if container.viewContext.hasChanges {
@@ -84,7 +95,7 @@ class DataController: ObservableObject {
         }
     }
 
-    // Método para eliminar un objeto de Core Data
+    /// Método para eliminar un objeto de Core Data
     func delete(_ object: NSManagedObject) {
         // Notifica a los observadores que el objeto cambiará (útil para SwiftUI)
         objectWillChange.send()
@@ -96,7 +107,7 @@ class DataController: ObservableObject {
         save()
     }
 
-    // Método privado para realizar una eliminación masiva en Core Data
+    /// Método privado para realizar una eliminación masiva en Core Data
     private func delete(_ fetchRequest: NSFetchRequest<NSFetchRequestResult>) {
         // Se crea una solicitud de eliminación en lote basada en la consulta proporcionada
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
@@ -114,7 +125,7 @@ class DataController: ObservableObject {
         }
     }
 
-    // Método para eliminar todos los datos de la base de datos
+    /// Método para eliminar todos los datos de la base de datos
     func deleteAll() {
         // Se crea una solicitud para eliminar todas las entidades "Tag"
         let request1: NSFetchRequest<NSFetchRequestResult> = Tag.fetchRequest()

@@ -27,6 +27,7 @@ extension Issue {
         modificationDate ?? .now
     }
     
+    /// ordena todas las etiquetas
     var issueTags: [Tag] {
         let result = tags?.allObjects as? [Tag] ?? []
         return result.sorted()
@@ -47,6 +48,8 @@ extension Issue {
 }
 
 extension Issue: Comparable {
+    
+    /// Se ordena los issue por titulo, pero si tiene el mismo titulo ordena por fecha de creacion 
     public static func <(lhs: Issue, rhs: Issue) -> Bool {
         let left = lhs.issueTitle.localizedLowercase
         let right = rhs.issueTitle.localizedLowercase

@@ -16,7 +16,7 @@ extension Tag {
         name ?? ""
     }
     
-    // devuelva y filtre los que no son completados aun
+    ///  filtre los que no son completados aun
     var tagActiveIssues: [Issue] {
         let result = issues?.allObjects as? [Issue] ?? []
         return result.filter { issue in
@@ -36,6 +36,8 @@ extension Tag {
 }
 
 extension Tag: Comparable {
+    
+    /// ordenar por nombre pero si tiene el mismo nombre se ordena por ID
     public static func <(lhs: Tag, rhs: Tag) -> Bool {
         let left = lhs.tagName.localizedLowercase
         let right = rhs.tagName.localizedLowercase
