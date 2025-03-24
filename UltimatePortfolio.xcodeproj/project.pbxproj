@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C94EB7B32D91C941008B938C /* Issue-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94EB7B22D91C941008B938C /* Issue-CoreDataHelpers.swift */; };
+		C94EB7B52D91D169008B938C /* Tag-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94EB7B42D91D169008B938C /* Tag-CoreDataHelpers.swift */; };
 		C9BBA6AD2D8CB39300C1D499 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9BBA6A32D8CB39300C1D499 /* Preview Assets.xcassets */; };
 		C9BBA6AE2D8CB39300C1D499 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9BBA6A52D8CB39300C1D499 /* Assets.xcassets */; };
 		C9BBA6AF2D8CB39300C1D499 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA6A62D8CB39300C1D499 /* ContentView.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C94EB7B22D91C941008B938C /* Issue-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Issue-CoreDataHelpers.swift"; sourceTree = "<group>"; };
+		C94EB7B42D91D169008B938C /* Tag-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 		C9BBA6A32D8CB39300C1D499 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C9BBA6A52D8CB39300C1D499 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9BBA6A62D8CB39300C1D499 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,7 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				C9BBA6B32D8CB4B200C1D499 /* Info.plist */,
-				C9BBA6A42D8CB39300C1D499 /* Preview Content */,
 				C9BBA6AA2D8CB39300C1D499 /* UltimatePortfolioApp.swift */,
 				C9E0EB282D8DD1F5004539E1 /* Filter.swift */,
 				C9BBA6A72D8CB39300C1D499 /* DataController.swift */,
@@ -64,8 +67,11 @@
 				C9BBA6A62D8CB39300C1D499 /* ContentView.swift */,
 				C9E0EB262D8DCFE6004539E1 /* DetailView.swift */,
 				C9BBA6A82D8CB39300C1D499 /* Main.xcdatamodeld */,
+				C94EB7B22D91C941008B938C /* Issue-CoreDataHelpers.swift */,
+				C94EB7B42D91D169008B938C /* Tag-CoreDataHelpers.swift */,
 				C9BBA6A92D8CB39300C1D499 /* UltimatePortfolio.entitlements */,
 				C9BBA6A52D8CB39300C1D499 /* Assets.xcassets */,
+				C9BBA6A42D8CB39300C1D499 /* Preview Content */,
 			);
 			path = UltimatePortfolio;
 			sourceTree = "<group>";
@@ -160,7 +166,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9E0EB292D8DD1F5004539E1 /* Filter.swift in Sources */,
+				C94EB7B52D91D169008B938C /* Tag-CoreDataHelpers.swift in Sources */,
 				C9BBA6AF2D8CB39300C1D499 /* ContentView.swift in Sources */,
+				C94EB7B32D91C941008B938C /* Issue-CoreDataHelpers.swift in Sources */,
 				C9E0EB272D8DCFE6004539E1 /* DetailView.swift in Sources */,
 				C9BBA6B02D8CB39300C1D499 /* DataController.swift in Sources */,
 				C9E0EB252D8DCFE0004539E1 /* SidebarView.swift in Sources */,

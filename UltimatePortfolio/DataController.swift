@@ -13,6 +13,7 @@ class DataController: ObservableObject {
     // Contenedor que maneja el almacenamiento persistente con CloudKit
     let container: NSPersistentCloudKitContainer
     
+    // inicializa con todos los issues
     @Published var selectedFilter: Filter? = Filter.all
     
     // Propiedad estática para proporcionar un DataController con datos de prueba
