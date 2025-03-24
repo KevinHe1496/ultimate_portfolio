@@ -38,12 +38,16 @@ class DataController: ObservableObject {
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(filePath: "/dev/null")
         }
-        
+        // habilita que core data realice el trabajo por nosotros
         container.viewContext.automaticallyMergesChangesFromParent = true
+        /*
+         ¿qué sucedería si modificáramos la misma propiedad en dos dispositivos diferentes? En ese caso, debemos decidir cuál es la correcta, por lo que la política de fusión que usaremos se llama ".mergeByPropertyObjectTrump". Esto significa que queremos que Core Data compare cada propiedad individualmente, pero si hay un conflicto, debería preferir lo que esté actualmente en memoria.
+         */
         container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
         
         container.persistentStoreDescriptions.first?.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
         
+        // Le dice al sistema que llame a nuestro RemoteStoreChanged, cada vez que ocurra un cambio
         NotificationCenter.default.addObserver(forName: .NSPersistentStoreRemoteChange, object: container.persistentStoreCoordinator, queue: .main, using: remoteStoreChange)
         
         // Carga los almacenes persistentes y maneja errores si ocurren
@@ -53,7 +57,7 @@ class DataController: ObservableObject {
             }
         }
     }
-    
+    /// Le dice a coredata que queremos ser notificamos cuando el store haya cambiado
     func remoteStoreChange(_ notification: Notification) {
         objectWillChange.send()
     }

@@ -16,6 +16,7 @@ struct IssueRow: View {
             HStack {
                 Image(systemName: "exclamationmark.circle")
                     .imageScale(.large)
+                // si tiene alta prioridad la opity sera 1 y si no sera 0
                     .opacity(issue.priority == 2 ? 1 : 0)
                 
                 VStack(alignment: .leading) {
@@ -31,6 +32,7 @@ struct IssueRow: View {
                 Spacer()
                 
                 VStack(alignment: .trailing) {
+                    // muestra la fecha de creacion
                     Text(issue.issueCreationDate.formatted(date: .numeric, time: .omitted))
                         .font(.subheadline)
                     

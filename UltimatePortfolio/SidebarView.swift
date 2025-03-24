@@ -49,6 +49,7 @@ struct SidebarView: View {
             }
         }
     }
+    /// elimina la fila seleccionada
     func delete(_ offsets: IndexSet) {
         for offset in offsets {
             let item = tags[offset]
