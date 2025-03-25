@@ -15,6 +15,7 @@ class DataController: ObservableObject {
     
     // inicializa con todos los issues
     @Published var selectedFilter: Filter? = Filter.all
+    @Published var selectedIssue: Issue?
     
     // Propiedad estática para proporcionar un DataController con datos de prueba
     static var preview: DataController = {
@@ -141,6 +142,16 @@ class DataController: ObservableObject {
         
         // Guarda los cambios para confirmar la eliminación
         save()
+    }
+    
+    func missingTags(from issue: Issue) -> [Tag] {
+        let request = Tag.fetchRequest()
+        let allTags = (try? container.viewContext.fetch(request)) ?? []
+        
+        let allTagsSet = Set(allTags)
+        let difference = allTagsSet.symmetricDifference(issue.issueTags)
+        
+        return difference.sorted()
     }
 
 }
