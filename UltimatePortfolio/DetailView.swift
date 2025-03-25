@@ -11,6 +11,7 @@ struct DetailView: View {
     @EnvironmentObject var dataController: DataController
     
     var body: some View {
+        // mostrar si tiene  el usuario un issue seleccionado, o no
         VStack {
             if let issue = dataController.selectedIssue {
                 IssueView(issue: issue)

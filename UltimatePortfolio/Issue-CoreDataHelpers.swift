@@ -33,6 +33,7 @@ extension Issue {
         return result.sorted()
     }
     
+    // damos solo los problemas con sus nombres
     var issueTagsList: String {
         guard let tags else { return "No tags" }
         
@@ -43,6 +44,8 @@ extension Issue {
         }
     }
     
+    // convertimos completed a un string
+    // te dice si esta completado o no
     var issueStatus: String {
         if completed {
             return "Closed"

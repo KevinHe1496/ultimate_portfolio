@@ -73,7 +73,13 @@ struct IssueView: View {
                 }
             }
         }
+        // si eliminamos el problema seleccionado, ya no podran realizar cambios en la vista.
         .disabled(issue.isDeleted)
+        
+        // detecta los cambios recibidos
+        .onReceive(issue.objectWillChange) { _ in
+            dataController.queueSave()
+        }
     }
 }
 

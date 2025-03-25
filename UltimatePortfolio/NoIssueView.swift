@@ -16,7 +16,7 @@ struct NoIssueView: View {
             .foregroundStyle(.secondary)
         
         Button("New Issue") {
-            
+            // make a new issue
         }
     }
 }

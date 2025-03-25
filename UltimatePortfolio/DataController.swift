@@ -15,7 +15,11 @@ class DataController: ObservableObject {
     
     // inicializa con todos los issues
     @Published var selectedFilter: Filter? = Filter.all
+    
     @Published var selectedIssue: Issue?
+    
+    // Task no devuelve nada, pero puede lanzar error y es opcional porque inicialmente no tendra nada
+    private var saveTask: Task<Void, Error>?
     
     // Propiedad estática para proporcionar un DataController con datos de prueba
     static var preview: DataController = {
@@ -99,6 +103,21 @@ class DataController: ObservableObject {
             try? container.viewContext.save()
         }
     }
+    
+    /// Metodo que guarda los cuambios depues de 3 segundos
+    
+    func queueSave() {
+        // cancelamos la tarea si se produce otro cambio
+        saveTask?.cancel()
+        // guardamos la nueva tarea en SaveTask
+        saveTask = Task { @MainActor in
+            // suspendemos 3 segundos
+            try await Task.sleep(for: .seconds(3))
+            // guardamos
+            save()
+            
+        }
+    }
 
     /// Método para eliminar un objeto de Core Data
     func delete(_ object: NSManagedObject) {
@@ -144,6 +163,9 @@ class DataController: ObservableObject {
         save()
     }
     
+    /// Cargar internamente todas las etiquetas que puedan existir.
+    /// Calcular qué etiquetas no están asignadas actualmente al problema.
+    /// Ordena esas etiquetas y luego envíalas de vuelta.
     func missingTags(from issue: Issue) -> [Tag] {
         let request = Tag.fetchRequest()
         let allTags = (try? container.viewContext.fetch(request)) ?? []
