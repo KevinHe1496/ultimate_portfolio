@@ -18,6 +18,9 @@ class DataController: ObservableObject {
     
     @Published var selectedIssue: Issue?
     
+    @Published var filterText = ""
+    @Published var filterTokens = [Tag]()
+    
     // Task no devuelve nada, pero puede lanzar error y es opcional porque inicialmente no tendra nada
     private var saveTask: Task<Void, Error>?
     
@@ -33,7 +36,20 @@ class DataController: ObservableObject {
         return dataController
     }()
 
-    
+    var suggestedFilterTokens: [Tag] {
+        guard filterText.starts(with: "#") else {
+            return []
+        }
+        
+        let trimmedFilterText = String(filterText.dropFirst()).trimmingCharacters(in: .whitespaces)
+        let request = Tag.fetchRequest()
+        
+        if trimmedFilterText.isEmpty == false {
+            request.predicate = NSPredicate(format: "name CONTAINS[c] %@", trimmedFilterText)
+        }
+        
+        return (try? container.viewContext.fetch(request).sorted()) ?? []
+    }
     // Inicializador que configura el contenedor de Core Data
     init(inMemory: Bool = false) {
         // Se crea un contenedor persistente llamado "Main"
@@ -174,6 +190,50 @@ class DataController: ObservableObject {
         let difference = allTagsSet.symmetricDifference(issue.issueTags)
         
         return difference.sorted()
+    }
+    
+    func issuesForSelectedFilter() -> [Issue] {
+        let filter = selectedFilter ?? .all
+        var predicates = [NSPredicate]()
+        
+        
+        if let tag = filter.tag {
+            let tagPredicate = NSPredicate(format: "tags CONTAINS %@", tag)
+            predicates.append(tagPredicate)
+        } else {
+            
+            let datePredicate = NSPredicate(format: "modificationDate > %@", filter.minModificationDate as NSDate)
+            predicates.append(datePredicate)
+            
+        }
+         
+        let trimmedFilterText = filterText.trimmingCharacters(in: .whitespaces)
+        
+        if !trimmedFilterText.isEmpty {
+            
+            // title es el nombre del atributo que se quiere filtrar
+            // CONTAINS Busca si el valor del atributo content contiene el texto indicado.
+            // [c] Hace la búsqueda case insensitive (ignora mayúsculas y minúsculas).
+            // %@ es un placeholder que será reemplazado por trimmedFilterText, que es el texto que se busca dentro de content
+            let titlePredicate = NSPredicate(format: "title CONTAINS[c] %@", trimmedFilterText)
+            let contentPredicate = NSPredicate(format: "content CONTAINS[c] %@", trimmedFilterText)
+            let combinedPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: [titlePredicate, contentPredicate])
+            predicates.append(combinedPredicate)
+        }
+        
+        if filterTokens.isEmpty == false {
+            for filterToken in filterTokens {
+                let tokenPredicate = NSPredicate(format: "tags CONTAINS %@", filterToken)
+                predicates.append(tokenPredicate)
+            }
+        }
+        
+        let request = Issue.fetchRequest()
+        request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+        
+        let allIssues = (try? container.viewContext.fetch(request)) ?? []
+        
+        return allIssues.sorted()
     }
 
 }
