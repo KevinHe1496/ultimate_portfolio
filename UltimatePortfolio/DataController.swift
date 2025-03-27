@@ -7,6 +7,15 @@
 
 import CoreData
 
+enum SortType: String {
+    case dateCreated = "creationDate"
+    case dateModified = "modificationDate"
+}
+
+enum Status {
+    case all, open, closed
+}
+
 // Esta clase administra la carga y gestión de datos usando Core Data y CloudKit.
 class DataController: ObservableObject {
     
@@ -20,6 +29,12 @@ class DataController: ObservableObject {
     
     @Published var filterText = ""
     @Published var filterTokens = [Tag]()
+    
+    @Published var filterEnabled = false
+    @Published var filterPrority = -1
+    @Published var filterStatus = Status.all
+    @Published var sortType = SortType.dateCreated
+    @Published var sortNewestFirst = true
     
     // Task no devuelve nada, pero puede lanzar error y es opcional porque inicialmente no tendra nada
     private var saveTask: Task<Void, Error>?
@@ -231,9 +246,24 @@ class DataController: ObservableObject {
             }
         }
         
+        if filterEnabled {
+            if filterPrority >= 0 {
+                // = %d indica que se comparará con un valor entero
+                let priorityFilter = NSPredicate(format: "priority = %d", filterPrority)
+                predicates.append(priorityFilter)
+            }
+        }
+        
+        if filterStatus != .all {
+            let lookForClosed = filterStatus == .closed
+            // = %@ es un marcador de posición para cualquier tipo de objeto (como Bool, String, NSNumber, etc.).
+            let statusFilter = NSPredicate(format: "completed = %@", NSNumber(value: lookForClosed))
+            predicates.append(statusFilter)
+        }
+        
         let request = Issue.fetchRequest()
         request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
-        
+        request.sortDescriptors = [NSSortDescriptor(key: sortType.rawValue, ascending: sortNewestFirst)]
         let allIssues = (try? container.viewContext.fetch(request)) ?? []
         
         return allIssues.sorted()
