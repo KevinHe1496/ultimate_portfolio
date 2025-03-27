@@ -201,7 +201,8 @@ class DataController: ObservableObject {
             let tagPredicate = NSPredicate(format: "tags CONTAINS %@", tag)
             predicates.append(tagPredicate)
         } else {
-            
+            // modificationDate Es el nombre del atributo que almacena una fecha
+            // > Significa "mayor que", por lo que se filtrarán los objetos cuya modificationDate sea despues a una fecha dada.
             let datePredicate = NSPredicate(format: "modificationDate > %@", filter.minModificationDate as NSDate)
             predicates.append(datePredicate)
             
@@ -217,6 +218,8 @@ class DataController: ObservableObject {
             // %@ es un placeholder que será reemplazado por trimmedFilterText, que es el texto que se busca dentro de content
             let titlePredicate = NSPredicate(format: "title CONTAINS[c] %@", trimmedFilterText)
             let contentPredicate = NSPredicate(format: "content CONTAINS[c] %@", trimmedFilterText)
+            
+            // esto toma nuestro array de predicados y garantiza que todos coincidan para cada issue en la solicitud de búsqueda.
             let combinedPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: [titlePredicate, contentPredicate])
             predicates.append(combinedPredicate)
         }
