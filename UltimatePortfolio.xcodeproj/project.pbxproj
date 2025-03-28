@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C92936D92D970C2A00F0007D /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92936D82D970C2A00F0007D /* Bundle-Decodable.swift */; };
+		C92936DC2D971B7E00F0007D /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = C92936DA2D971B7E00F0007D /* Awards.json */; };
+		C92936DD2D971B7E00F0007D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C92936DB2D971B7E00F0007D /* Colors.xcassets */; };
+		C92936DF2D971C5C00F0007D /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92936DE2D971C5C00F0007D /* Award.swift */; };
+		C92936E12D971D1700F0007D /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92936E02D971D1700F0007D /* AwardsView.swift */; };
 		C94EB7B32D91C941008B938C /* Issue-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94EB7B22D91C941008B938C /* Issue-CoreDataHelpers.swift */; };
 		C94EB7B52D91D169008B938C /* Tag-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94EB7B42D91D169008B938C /* Tag-CoreDataHelpers.swift */; };
 		C94EB7BD2D9204B5008B938C /* IssueRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94EB7BC2D9204B5008B938C /* IssueRow.swift */; };
@@ -24,6 +29,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C92936D82D970C2A00F0007D /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		C92936DA2D971B7E00F0007D /* Awards.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Awards.json; sourceTree = "<group>"; };
+		C92936DB2D971B7E00F0007D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		C92936DE2D971C5C00F0007D /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
+		C92936E02D971D1700F0007D /* AwardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsView.swift; sourceTree = "<group>"; };
 		C94EB7B22D91C941008B938C /* Issue-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Issue-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 		C94EB7B42D91D169008B938C /* Tag-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 		C94EB7BC2D9204B5008B938C /* IssueRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueRow.swift; sourceTree = "<group>"; };
@@ -69,6 +79,7 @@
 				C9BBA6AA2D8CB39300C1D499 /* UltimatePortfolioApp.swift */,
 				C9E0EB282D8DD1F5004539E1 /* Filter.swift */,
 				C9BBA6A72D8CB39300C1D499 /* DataController.swift */,
+				C92936D82D970C2A00F0007D /* Bundle-Decodable.swift */,
 				C9E0EB262D8DCFE6004539E1 /* DetailView.swift */,
 				C9BC0F142D93135C00ABF645 /* IssueView.swift */,
 				C9BC0F162D93136600ABF645 /* NoIssueView.swift */,
@@ -78,8 +89,12 @@
 				C94EB7B22D91C941008B938C /* Issue-CoreDataHelpers.swift */,
 				C94EB7B42D91D169008B938C /* Tag-CoreDataHelpers.swift */,
 				C9BBA6A82D8CB39300C1D499 /* Main.xcdatamodeld */,
-				C9BBA6A92D8CB39300C1D499 /* UltimatePortfolio.entitlements */,
+				C92936DA2D971B7E00F0007D /* Awards.json */,
+				C92936DE2D971C5C00F0007D /* Award.swift */,
+				C92936E02D971D1700F0007D /* AwardsView.swift */,
+				C92936DB2D971B7E00F0007D /* Colors.xcassets */,
 				C9BBA6A52D8CB39300C1D499 /* Assets.xcassets */,
+				C9BBA6A92D8CB39300C1D499 /* UltimatePortfolio.entitlements */,
 				C9BBA6A42D8CB39300C1D499 /* Preview Content */,
 			);
 			path = UltimatePortfolio;
@@ -163,6 +178,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9BBA6AD2D8CB39300C1D499 /* Preview Assets.xcassets in Resources */,
+				C92936DC2D971B7E00F0007D /* Awards.json in Resources */,
+				C92936DD2D971B7E00F0007D /* Colors.xcassets in Resources */,
 				C9BBA6AE2D8CB39300C1D499 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,9 +192,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9E0EB292D8DD1F5004539E1 /* Filter.swift in Sources */,
+				C92936DF2D971C5C00F0007D /* Award.swift in Sources */,
+				C92936E12D971D1700F0007D /* AwardsView.swift in Sources */,
 				C94EB7B52D91D169008B938C /* Tag-CoreDataHelpers.swift in Sources */,
 				C9BBA6AF2D8CB39300C1D499 /* ContentView.swift in Sources */,
 				C94EB7B32D91C941008B938C /* Issue-CoreDataHelpers.swift in Sources */,
+				C92936D92D970C2A00F0007D /* Bundle-Decodable.swift in Sources */,
 				C9E0EB272D8DCFE6004539E1 /* DetailView.swift in Sources */,
 				C9BBA6B02D8CB39300C1D499 /* DataController.swift in Sources */,
 				C9E0EB252D8DCFE0004539E1 /* SidebarView.swift in Sources */,

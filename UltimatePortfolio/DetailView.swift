@@ -20,6 +20,7 @@ struct DetailView: View {
             }
         }
         .navigationTitle("Details")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -27,12 +28,3 @@ struct DetailView: View {
     DetailView()
 }
 
-extension View {
-    func inlineNavigationBar() -> some View {
-#if os(iOS)
-        self.navigationBarTitleDisplayMode(.inline)
-        #else
-        self
-        #endif
-    }
-}

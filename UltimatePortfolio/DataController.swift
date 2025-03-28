@@ -269,6 +269,7 @@ class DataController: ObservableObject {
         return allIssues.sorted()
     }
     
+    /// agregamos un nuevo tag
     func newTag() {
         let tag = Tag(context: container.viewContext)
         tag.id = UUID()
