@@ -11,6 +11,7 @@ extension Bundle {
     func decode<T: Decodable>(
         _ file: String,
         as type: T.Type = T.self,
+        //  nos permite gestionar las fechas 
         dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,
         keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys
     ) -> T {

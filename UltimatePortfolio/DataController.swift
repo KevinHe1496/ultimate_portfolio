@@ -50,7 +50,7 @@ class DataController: ObservableObject {
         // Se devuelve la instancia preconfigurada de DataController
         return dataController
     }()
-
+    
     var suggestedFilterTokens: [Tag] {
         guard filterText.starts(with: "#") else {
             return []
@@ -149,7 +149,7 @@ class DataController: ObservableObject {
             
         }
     }
-
+    
     /// Método para eliminar un objeto de Core Data
     func delete(_ object: NSManagedObject) {
         // Notifica a los observadores que el objeto cambiará (útil para SwiftUI)
@@ -161,7 +161,7 @@ class DataController: ObservableObject {
         // Guarda los cambios después de eliminar el objeto
         save()
     }
-
+    
     /// Método privado para realizar una eliminación masiva en Core Data
     private func delete(_ fetchRequest: NSFetchRequest<NSFetchRequestResult>) {
         // Se crea una solicitud de eliminación en lote basada en la consulta proporcionada
@@ -179,7 +179,7 @@ class DataController: ObservableObject {
             NSManagedObjectContext.mergeChanges(fromRemoteContextSave: changes, into: [container.viewContext])
         }
     }
-
+    
     /// Método para eliminar todos los datos de la base de datos
     func deleteAll() {
         // Se crea una solicitud para eliminar todas las entidades "Tag"
@@ -222,7 +222,7 @@ class DataController: ObservableObject {
             predicates.append(datePredicate)
             
         }
-         
+        
         let trimmedFilterText = filterText.trimmingCharacters(in: .whitespaces)
         
         if !trimmedFilterText.isEmpty {
@@ -276,7 +276,7 @@ class DataController: ObservableObject {
         tag.name = "New tag"
         save()
     }
-
+    
     /// agregamos nuevo issue
     func newIssue() {
         let issue = Issue(context: container.viewContext)
@@ -291,6 +291,39 @@ class DataController: ObservableObject {
         save()
         
         selectedIssue = issue
+    }
+    
+    func count<T>(for fetchRequest: NSFetchRequest<T>) -> Int {
+        (try? container.viewContext.count(for: fetchRequest)) ?? 0
+    }
+    
+    /// Premios que ha ganamos segun los issues, closed, tags
+    func hasEarned(award: Award) -> Bool {
+        switch award.criterion {
+        case "issues":
+            // return true if they added a certain number of issues
+            let fetchRequest = Issue.fetchRequest()
+            let awadCount = count(for: fetchRequest)
+            return awadCount >= award.value
+            
+        case "closed":
+            // returns true if they closed a certain number of issues
+            let fetchRequest = Issue.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "completed = true")
+            let awardCount = count(for: fetchRequest)
+            return awardCount >= award.value
+            
+        case "tags":
+            // return true if they created a certain number of tags
+            let fetchRequest = Tag.fetchRequest()
+            let awardCount = count(for: fetchRequest)
+            return awardCount >= award.value
+            
+        default:
+            // an unknown award criterion; this should never be allowed
+            // fatalError("Unknown award criterion: \(award.criterion)")
+            return false
+        }
     }
     
 }
