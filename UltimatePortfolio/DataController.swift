@@ -128,6 +128,8 @@ class DataController: ObservableObject {
     
     /// Método para guardar cambios en la base de datos
     func save() {
+        saveTask?.cancel()
+        
         // Verifica si hay cambios en el contexto antes de intentar guardarlos
         if container.viewContext.hasChanges {
             // Intenta guardar los cambios, ignorando posibles errores con `try?`
@@ -266,7 +268,7 @@ class DataController: ObservableObject {
         request.sortDescriptors = [NSSortDescriptor(key: sortType.rawValue, ascending: sortNewestFirst)]
         let allIssues = (try? container.viewContext.fetch(request)) ?? []
         
-        return allIssues.sorted()
+        return allIssues
     }
     
     /// agregamos un nuevo tag
