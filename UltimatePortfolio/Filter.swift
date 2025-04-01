@@ -15,6 +15,10 @@ struct Filter: Identifiable, Hashable {
     var icon: String // Nombre del icono asociado al filtro (usado en la UI).
     var minModificationDate = Date.distantPast // Fecha mínima de modificación para filtrar datos.
     var tag: Tag? // Opcional: Permite asociar un filtro a una categoría (Tag).
+    
+    var activeIssuesCount: Int {
+        tag?.tagActiveIssues.count ?? 0
+    }
 
     /// Filtro predefinido que representa "Todos los Issues".
     static var all = Filter(id: UUID(), name: "All Issues", icon: "tray")
