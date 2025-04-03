@@ -1,0 +1,162 @@
+[
+    {
+        "name": "Primeros Pasos",
+        "description": "Añade tu primer issue.",
+        "color": "Light Blue",
+        "criterion": "issues",
+        "value": 1,
+        "image": "figure.walk"
+    },
+    {
+        "name": "Un Gran Comienzo",
+        "description": "Añade 10 issues.",
+        "color": "Light Blue",
+        "criterion": "issues",
+        "value": 10,
+        "image": "hand.thumbsup.fill"
+    },
+    {
+        "name": "Subiendo de Nivel",
+        "description": "Añade 20 issues.",
+        "color": "Light Blue",
+        "criterion": "issues",
+        "value": 20,
+        "image": "tray.and.arrow.up.fill"
+    },
+    {
+        "name": "Acelerando",
+        "description": "Añade 50 issues.",
+        "color": "Light Blue",
+        "criterion": "issues",
+        "value": 50,
+        "image": "speedometer"
+    },
+    {
+        "name": "Haciendo Olas",
+        "description": "Añade 100 issues.",
+        "color": "Light Blue",
+        "criterion": "issues",
+        "value": 100,
+        "image": "dot.radiowaves.left.and.right"
+    },
+    {
+        "name": "Alto Rendimiento",
+        "description": "Añade 250 issues.",
+        "color": "Light Blue",
+        "criterion": "issues",
+        "value": 250,
+        "image": "square.stack.3d.up.fill"
+    },
+    {
+        "name": "Estrella Destacada",
+        "description": "Añade 500 issues.",
+        "color": "Light Blue",
+        "criterion": "issues",
+        "value": 500,
+        "image": "star.circle.fill"
+    },
+    {
+        "name": "Campeón Destacado",
+        "description": "Añade 1000 issues.",
+        "color": "Light Blue",
+        "criterion": "issues",
+        "value": 1000,
+        "image": "crown.fill"
+    },
+    {
+        "name": "Marcando Casillas",
+        "description": "Cierra tu primer issue.",
+        "color": "Green",
+        "criterion": "closed",
+        "value": 1,
+        "image": "checkmark.shield.fill"
+    },
+    {
+        "name": "¡A Todo Ritmo!",
+        "description": "Cierra 10 issues.",
+        "color": "Green",
+        "criterion": "closed",
+        "value": 10,
+        "image": "guitars.fill"
+    },
+    {
+        "name": "20 Son Suficientes",
+        "description": "Cierra 20 issues.",
+        "color": "Green",
+        "criterion": "closed",
+        "value": 20,
+        "image": "20.square.fill"
+    },
+    {
+        "name": "¡Diana!",
+        "description": "Cierra 50 issues.",
+        "color": "Green",
+        "criterion": "closed",
+        "value": 50,
+        "image": "target"
+    },
+    {
+        "name": "Volando Alto",
+        "description": "Cierra 100 issues.",
+        "color": "Green",
+        "criterion": "closed",
+        "value": 100,
+        "image": "airplane.circle.fill"
+    },
+    {
+        "name": "¡Estás en Llamas!",
+        "description": "Cierra 250 issues.",
+        "color": "Green",
+        "criterion": "closed",
+        "value": 250,
+        "image": "flame.fill"
+    },
+    {
+        "name": "Jefe de las Casillas",
+        "description": "Cierra 500 issues.",
+        "color": "Green",
+        "criterion": "closed",
+        "value": 500,
+        "image": "text.badge.checkmark"
+    },
+    {
+        "name": "¡Boom!",
+        "description": "Cierra 1000 issues.",
+        "color": "Green",
+        "criterion": "closed",
+        "value": 1000,
+        "image": "bolt.circle.fill"
+    },
+    {
+        "name": "Jugando con Etiquetas",
+        "description": "Has creado tu primera etiqueta.",
+        "color": "Gold",
+        "criterion": "tags",
+        "value": 1,
+        "image": "tag.fill"
+    },
+    {
+        "name": "Luchador de Etiquetas",
+        "description": "Has creado 10 etiquetas.",
+        "color": "Gold",
+        "criterion": "tags",
+        "value": 10,
+        "image": "tag.circle.fill"
+    },
+    {
+        "name": "Etiqueta Suprema",
+        "description": "Has creado 50 etiquetas.",
+        "color": "Gold",
+        "criterion": "tags",
+        "value": 50,
+        "image": "square.grid.3x1.folder.fill.badge.plus"
+    },
+    {
+        "name": "Colaborador",
+        "description": "Has comprado la versión premium.",
+        "color": "Purple",
+        "criterion": "unlock",
+        "value": 0,
+        "image": "dollarsign.square.fill"
+    }
+]

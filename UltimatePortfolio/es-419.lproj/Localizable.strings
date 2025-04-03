@@ -1,0 +1,78 @@
+/* GENERAL STRINGS */
+"OK" = "OK";
+"Cancel" = "Cancelar";
+"Delete" = "Eliminar";
+"Rename" = "Renombrar";
+"Actions" = "Acciones";
+
+/* SIDEBARVIEW */
+"Filters" = "Filtros";
+"Smart Filters" = "Filtros Inteligentes";
+"All Issues" = "Todos los Problemas";
+"Recent Issues" = "Problemas Recientes";
+"Tags" = "Etiquetas";
+"Add tag" = "Añadir etiqueta";
+"Show awards" = "Mostrar premios";
+
+"Rename tag" = "Renombrar etiqueta";
+"New name" = "Nuevo nombre";
+
+/* CONTENTVIEW */
+"Issues" = "Problemas";
+
+/* A button that shows a menu with the following options */
+"Filter" = "Filtrar";
+"Turn Filter On" = "Activar Filtro"; /* Enables filtering */
+"Turn Filter Off" = "Desactivar Filtro"; /* Disables filtering */
+"Sort By" = "Ordenar Por"; /* Adjust the order issues are shown */
+"Date Created" = "Fecha de Creación"; /* Sort issues by the date they were created */
+"Date Modified" = "Fecha de Modificación"; /* Sort issues by the date they were last changed */
+"Newest to Oldest" = "Más Recientes Primero"; /* Place newer issues before older issues */
+"Oldest to Newest" = "Más Antiguos Primero"; /* Place older issues before newer issues */
+
+"All" = "Todos";
+"Open" = "Abiertos";
+"Closed" = "Cerrados";
+
+"Low" = "Baja";
+"Medium" = "Media";
+"High" = "Alta";
+
+/* Create a new issue */
+"New Issue" = "Nuevo Problema";
+
+/* A text placeholder, to help users search */
+"Filter issues, or type # to add tags" = "Filtra problemas o escribe # para añadir etiquetas";
+
+/* Shown as a status for closed issues */
+"CLOSED" = "CERRADO";
+
+/* DETAILSVIEW */
+"Details" = "Detalles";
+
+/* NOISSUEVIEW */
+"No Issue Selected" = "Ningún Problema Seleccionado";
+
+/* ISSUEVIEW */
+"Copy Issue Title" = "Copiar Título del Problema";
+"Close Issue" = "Cerrar Problema";
+"Re-open Issue" = "Reabrir Problema";
+
+/* Fields that let the users enter details about a specific issue */
+"Enter the issue title here" = "Introduce el título del problema aquí";
+"**Modified:** %@" = "**Modificado:** %@";
+"**Status:** %@" = "**Estado:** %@";
+"Priority" = "Prioridad";
+"Add Tags" = "Añadir Etiquetas";
+"Basic Information" = "Información Básica";
+"Enter the issue description here" = "Introduce la descripción del problema aquí";
+
+/* AWARDS VIEW */
+"Awards" = "Premios";
+
+/* DATA */
+"New tag" = "Nueva etiqueta";
+"New issue" = "Nuevo problema";
+
+/* DEBUG ONLY */
+"ADD SAMPLES" = "AÑADIR EJEMPLOS";

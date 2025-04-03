@@ -43,6 +43,9 @@
 		C94EB7B22D91C941008B938C /* Issue-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Issue-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 		C94EB7B42D91D169008B938C /* Tag-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 		C94EB7BC2D9204B5008B938C /* IssueRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueRow.swift; sourceTree = "<group>"; };
+		C975518F2D9F47BA00B54DD9 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "es-419"; path = "es-419.lproj/Awards.json"; sourceTree = "<group>"; };
+		C97551902D9F47BA00B54DD9 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		C97551912D9F47BA00B54DD9 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = "es-419"; path = "es-419.lproj/Localizable.stringsdict"; sourceTree = "<group>"; };
 		C97765732D9F17FC00880CB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C9BBA6A32D8CB39300C1D499 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C9BBA6A52D8CB39300C1D499 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -169,6 +172,7 @@
 				en,
 				Base,
 				hu,
+				"es-419",
 			);
 			mainGroup = C9F1ED3D2D8B97EC006AAF11;
 			minimizedProjectReferenceProxies = 1;
@@ -229,6 +233,7 @@
 			children = (
 				C926BDA62D9F3323005309EB /* en */,
 				C926BDAA2D9F4134005309EB /* hu */,
+				C97551912D9F47BA00B54DD9 /* es-419 */,
 			);
 			name = Localizable.stringsdict;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 			children = (
 				C926BDAB2D9F42B3005309EB /* en */,
 				C926BDAE2D9F42B7005309EB /* hu */,
+				C975518F2D9F47BA00B54DD9 /* es-419 */,
 			);
 			name = Awards.json;
 			sourceTree = "<group>";
@@ -247,6 +253,7 @@
 			children = (
 				C97765732D9F17FC00880CB3 /* en */,
 				C926BDA92D9F4134005309EB /* hu */,
+				C97551902D9F47BA00B54DD9 /* es-419 */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
