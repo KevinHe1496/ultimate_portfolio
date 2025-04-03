@@ -33,7 +33,7 @@ struct IssueRow: View {
                 
                 VStack(alignment: .trailing) {
                     // muestra la fecha de creacion
-                    Text(issue.issueCreationDate.formatted(date: .numeric, time: .omitted))
+                    Text(issue.issueFormattedCreationDate)
                         .accessibilityLabel(issue.issueCreationDate.formatted(date: .abbreviated, time: .omitted))
                         .font(.subheadline)
                     
