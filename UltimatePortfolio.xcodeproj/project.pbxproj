@@ -25,6 +25,12 @@
 		C9BBA6B22D8CB39300C1D499 /* UltimatePortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA6AA2D8CB39300C1D499 /* UltimatePortfolioApp.swift */; };
 		C9BC0F152D93135C00ABF645 /* IssueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BC0F142D93135C00ABF645 /* IssueView.swift */; };
 		C9BC0F172D93136600ABF645 /* NoIssueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BC0F162D93136600ABF645 /* NoIssueView.swift */; };
+		C9C037742DA05FC500B6E373 /* SideBarViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C037732DA05FC500B6E373 /* SideBarViewToolbar.swift */; };
+		C9C037762DA0627500B6E373 /* IssueViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C037752DA0627500B6E373 /* IssueViewToolbar.swift */; };
+		C9C037782DA0634300B6E373 /* ContentViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C037772DA0634300B6E373 /* ContentViewToolbar.swift */; };
+		C9C0377A2DA064FC00B6E373 /* TagsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C037792DA064FC00B6E373 /* TagsMenuView.swift */; };
+		C9C0377C2DA0664000B6E373 /* SmartFilterRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0377B2DA0664000B6E373 /* SmartFilterRowView.swift */; };
+		C9C0377E2DA066C600B6E373 /* UserFilterRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0377D2DA066C600B6E373 /* UserFilterRowView.swift */; };
 		C9E0EB252D8DCFE0004539E1 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E0EB242D8DCFE0004539E1 /* SidebarView.swift */; };
 		C9E0EB272D8DCFE6004539E1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E0EB262D8DCFE6004539E1 /* DetailView.swift */; };
 		C9E0EB292D8DD1F5004539E1 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E0EB282D8DD1F5004539E1 /* Filter.swift */; };
@@ -57,6 +63,12 @@
 		C9BBA6B32D8CB4B200C1D499 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C9BC0F142D93135C00ABF645 /* IssueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueView.swift; sourceTree = "<group>"; };
 		C9BC0F162D93136600ABF645 /* NoIssueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoIssueView.swift; sourceTree = "<group>"; };
+		C9C037732DA05FC500B6E373 /* SideBarViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarViewToolbar.swift; sourceTree = "<group>"; };
+		C9C037752DA0627500B6E373 /* IssueViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueViewToolbar.swift; sourceTree = "<group>"; };
+		C9C037772DA0634300B6E373 /* ContentViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewToolbar.swift; sourceTree = "<group>"; };
+		C9C037792DA064FC00B6E373 /* TagsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsMenuView.swift; sourceTree = "<group>"; };
+		C9C0377B2DA0664000B6E373 /* SmartFilterRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartFilterRowView.swift; sourceTree = "<group>"; };
+		C9C0377D2DA066C600B6E373 /* UserFilterRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFilterRowView.swift; sourceTree = "<group>"; };
 		C9E0EB242D8DCFE0004539E1 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		C9E0EB262D8DCFE6004539E1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		C9E0EB282D8DD1F5004539E1 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
@@ -92,9 +104,15 @@
 				C92936D82D970C2A00F0007D /* Bundle-Decodable.swift */,
 				C9E0EB262D8DCFE6004539E1 /* DetailView.swift */,
 				C9BC0F142D93135C00ABF645 /* IssueView.swift */,
+				C9C037792DA064FC00B6E373 /* TagsMenuView.swift */,
+				C9C037752DA0627500B6E373 /* IssueViewToolbar.swift */,
 				C9BC0F162D93136600ABF645 /* NoIssueView.swift */,
 				C9E0EB242D8DCFE0004539E1 /* SidebarView.swift */,
+				C9C0377D2DA066C600B6E373 /* UserFilterRowView.swift */,
+				C9C0377B2DA0664000B6E373 /* SmartFilterRowView.swift */,
+				C9C037732DA05FC500B6E373 /* SideBarViewToolbar.swift */,
 				C9BBA6A62D8CB39300C1D499 /* ContentView.swift */,
+				C9C037772DA0634300B6E373 /* ContentViewToolbar.swift */,
 				C94EB7BC2D9204B5008B938C /* IssueRow.swift */,
 				C94EB7B22D91C941008B938C /* Issue-CoreDataHelpers.swift */,
 				C94EB7B42D91D169008B938C /* Tag-CoreDataHelpers.swift */,
@@ -208,16 +226,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9E0EB292D8DD1F5004539E1 /* Filter.swift in Sources */,
+				C9C0377A2DA064FC00B6E373 /* TagsMenuView.swift in Sources */,
 				C92936DF2D971C5C00F0007D /* Award.swift in Sources */,
+				C9C037762DA0627500B6E373 /* IssueViewToolbar.swift in Sources */,
 				C92936E12D971D1700F0007D /* AwardsView.swift in Sources */,
+				C9C0377E2DA066C600B6E373 /* UserFilterRowView.swift in Sources */,
 				C94EB7B52D91D169008B938C /* Tag-CoreDataHelpers.swift in Sources */,
 				C9BBA6AF2D8CB39300C1D499 /* ContentView.swift in Sources */,
 				C94EB7B32D91C941008B938C /* Issue-CoreDataHelpers.swift in Sources */,
 				C92936D92D970C2A00F0007D /* Bundle-Decodable.swift in Sources */,
 				C9E0EB272D8DCFE6004539E1 /* DetailView.swift in Sources */,
 				C9BBA6B02D8CB39300C1D499 /* DataController.swift in Sources */,
+				C9C0377C2DA0664000B6E373 /* SmartFilterRowView.swift in Sources */,
+				C9C037782DA0634300B6E373 /* ContentViewToolbar.swift in Sources */,
 				C9E0EB252D8DCFE0004539E1 /* SidebarView.swift in Sources */,
 				C9BBA6B12D8CB39300C1D499 /* Main.xcdatamodeld in Sources */,
+				C9C037742DA05FC500B6E373 /* SideBarViewToolbar.swift in Sources */,
 				C9BC0F152D93135C00ABF645 /* IssueView.swift in Sources */,
 				C9BC0F172D93136600ABF645 /* NoIssueView.swift in Sources */,
 				C94EB7BD2D9204B5008B938C /* IssueRow.swift in Sources */,
