@@ -81,13 +81,23 @@ class DataController: ObservableObject {
          */
         container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
         
-        container.persistentStoreDescriptions.first?.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+        container.persistentStoreDescriptions.first?
+            .setOption(
+                true as NSNumber,
+                forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey
+            )
         
         // Le dice al sistema que llame a nuestro RemoteStoreChanged, cada vez que ocurra un cambio
-        NotificationCenter.default.addObserver(forName: .NSPersistentStoreRemoteChange, object: container.persistentStoreCoordinator, queue: .main, using: remoteStoreChange)
+        NotificationCenter.default
+            .addObserver(
+                forName: .NSPersistentStoreRemoteChange,
+                object: container.persistentStoreCoordinator,
+                queue: .main,
+                using: remoteStoreChange
+            )
         
         // Carga los almacenes persistentes y maneja errores si ocurren
-        container.loadPersistentStores { storeDescription, error in
+        container.loadPersistentStores { _, error in
             if let error {
                 fatalError("Fatal error loading store: \(error.localizedDescription)")
             }
@@ -103,15 +113,15 @@ class DataController: ObservableObject {
         let viewContext = container.viewContext // Contexto de vista de Core Data
         
         // Se crean 5 etiquetas (Tags)
-        for i in 1...5 {
+        for tagCounter in 1...5 {
             let tag = Tag(context: viewContext)
             tag.id = UUID() // Se asigna un identificador único
-            tag.name = "Tag \(i)" // Se le da un nombre identificador
+            tag.name = "Tag \(tagCounter)" // Se le da un nombre identificador
             
             // Cada etiqueta tiene 10 problemas (Issues) asociados
-            for j in 1...10 {
+            for issueCounter in 1...10 {
                 let issue = Issue(context: viewContext)
-                issue.title = "Issue \(i)-\(j)" // Título del problema
+                issue.title = "Issue \(tagCounter)-\(issueCounter)" // Título del problema
                 issue.content = "Description goes here" // Descripción ficticia
                 issue.creationDate = .now // Fecha de creación actual
                 issue.completed = Bool.random() // Se marca como completado o no de manera aleatoria
@@ -237,7 +247,12 @@ class DataController: ObservableObject {
             let contentPredicate = NSPredicate(format: "content CONTAINS[c] %@", trimmedFilterText)
             
             // esto toma nuestro array de predicados y garantiza que todos coincidan para cada issue en la solicitud de búsqueda.
-            let combinedPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: [titlePredicate, contentPredicate])
+            let combinedPredicate = NSCompoundPredicate(
+                orPredicateWithSubpredicates: [
+                    titlePredicate,
+                    contentPredicate
+                ]
+            )
             predicates.append(combinedPredicate)
         }
         

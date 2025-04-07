@@ -7,6 +7,8 @@
 
 import Foundation
 
+//swiftlint:disable line_length
+
 extension Bundle {
     func decode<T: Decodable>(
         _ file: String,
@@ -30,15 +32,19 @@ extension Bundle {
         do {
             return try decoder.decode(T.self, from: data)
         } catch DecodingError.keyNotFound(let key, let context) {
+            //swiftlint:disable:next line_length
             fatalError("Failed to decode \(file) from bundle due to missing key '\(key.stringValue)' – \(context.debugDescription)")
         } catch DecodingError.typeMismatch(_, let context) {
             fatalError("Failed to decode \(file) from bundle due to type mismatch – \(context.debugDescription)")
         } catch DecodingError.valueNotFound(let type, let context) {
             fatalError("Failed to decode \(file) from bundle due to missing \(type) value – \(context.debugDescription)")
         } catch DecodingError.dataCorrupted(_) {
+            //swiftlint:disable:next line_length
             fatalError("Failed to decode \(file) from bundle because it appears to be invalid JSON")
         } catch {
             fatalError("Failed to decode \(file) from bundle: \(error.localizedDescription)")
         }
     }
 }
+
+//swiftlint:enable line_length

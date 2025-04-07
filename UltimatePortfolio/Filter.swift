@@ -21,7 +21,11 @@ struct Filter: Identifiable, Hashable {
     }
 
     /// Filtro predefinido que representa "Todos los Issues".
-    static var all = Filter(id: UUID(), name: "All Issues", icon: "tray")
+    static var all = Filter(
+        id: UUID(),
+        name: "All Issues",
+        icon: "tray"
+    )
 
     /// Filtro predefinido que muestra los issues recientes (últimos 7 días).
     static var recent = Filter(
