@@ -17,9 +17,12 @@ enum Status {
 }
 
 // Esta clase administra la carga y gestión de datos usando Core Data y CloudKit.
+
+/// An environment singleton responsible for managing our Core Data stack, including handling saving,
+/// counting fetch request, tracking orgers, and dealing with sample data.
 class DataController: ObservableObject {
     
-    // Contenedor que maneja el almacenamiento persistente con CloudKit
+    /// The lone CloudKit container used to sotre all our data.
     let container: NSPersistentCloudKitContainer
     
     // inicializa con todos los issues
@@ -65,12 +68,19 @@ class DataController: ObservableObject {
         
         return (try? container.viewContext.fetch(request).sorted()) ?? []
     }
-    // Inicializador que configura el contenedor de Core Data
+    
+    /// Initializes a data controller, either in memory (for testing use such as previewing),
+    /// or on permanent storage (for use in regular app runs.)
+    ///
+    /// Defaults to permanent storage.
+    /// - Parameter inMemory: Whether to sotre this data in temporary memory or ot
     init(inMemory: Bool = false) {
         // Se crea un contenedor persistente llamado "Main"
         container = NSPersistentCloudKitContainer(name: "Main")
         
-        // Si la opción inMemory es true, Core Data guardará los datos solo en memoria (RAM) y no en el disco. Esto significa que los datos se borrarán cuando cierres la app.
+        // For testing and previewing purposes, we create a
+        // temporary, in-memory database by writing to /dev/null
+        // so our data is destroyed after the app finishes running.
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(filePath: "/dev/null")
         }
@@ -81,13 +91,16 @@ class DataController: ObservableObject {
          */
         container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
         
+        
+        // Make sure that we watch iCloud for all changes to make
+        // absolutely sure we keep our local UI in sync when a
+        // remore change happens.
         container.persistentStoreDescriptions.first?
             .setOption(
                 true as NSNumber,
                 forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey
             )
         
-        // Le dice al sistema que llame a nuestro RemoteStoreChanged, cada vez que ocurra un cambio
         NotificationCenter.default
             .addObserver(
                 forName: .NSPersistentStoreRemoteChange,
@@ -136,7 +149,10 @@ class DataController: ObservableObject {
         try? viewContext.save()
     }
     
-    /// Método para guardar cambios en la base de datos
+    
+    /// Saves our Core Data context if there are change. This silently ignores
+    /// any errors caused by saving, nut this should be fine because
+    /// all our attributes are optional.
     func save() {
         saveTask?.cancel()
         
@@ -182,6 +198,10 @@ class DataController: ObservableObject {
         // Se configura la solicitud para devolver los identificadores de los objetos eliminados
         batchDeleteRequest.resultType = .resultTypeObjectIDs
         
+        
+        //⚠️ IMPORTANT: When performing a batch delete we need to make sure we read the result back
+        // then merge all the changes from that result back into our live view context
+        // so that the tow stay in sync.
         // Se ejecuta la eliminación en lote dentro del contexto de Core Data
         if let delete = try? container.viewContext.execute(batchDeleteRequest) as? NSBatchDeleteResult {
             // Se extraen los identificadores de los objetos eliminados
@@ -219,6 +239,10 @@ class DataController: ObservableObject {
         return difference.sorted()
     }
     
+    
+    /// Runs a fetch request with various predicates thath filter the user's issues based on
+    /// tag, title, and conten text, search tokens, priority, and completion status.
+    /// - Returns: An array of all matching issues.
     func issuesForSelectedFilter() -> [Issue] {
         let filter = selectedFilter ?? .all
         var predicates = [NSPredicate]()
@@ -301,6 +325,9 @@ class DataController: ObservableObject {
         issue.creationDate = .now
         issue.priority = 1
         
+        // If we are currently browing a user-created tag, immediately
+        // add this new issue to the tag otherwise it won't appear in
+        // the list of issues they see.
         if let tag = selectedFilter?.tag {
             issue.addToTags(tag)
         }

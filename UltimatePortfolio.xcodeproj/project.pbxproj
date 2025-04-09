@@ -156,7 +156,6 @@
 				C9F1ED422D8B97EC006AAF11 /* Sources */,
 				C9F1ED432D8B97EC006AAF11 /* Frameworks */,
 				C9F1ED442D8B97EC006AAF11 /* Resources */,
-				C992C0422DA478CB00ABB72D /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -220,28 +219,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		C992C0422DA478CB00ABB72D /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if command -v swiftlint >/dev/null 2>&1\nthen\n    swiftlint lint --path \"${SRCROOT}/UltimatePortfolio\"\nelse\n    echo \"warning: `swiftlint` command not found\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C9F1ED422D8B97EC006AAF11 /* Sources */ = {
