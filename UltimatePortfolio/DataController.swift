@@ -164,7 +164,6 @@ class DataController: ObservableObject {
     }
     
     /// Metodo que guarda los cuambios depues de 3 segundos
-    
     func queueSave() {
         // cancelamos la tarea si se produce otro cambio
         saveTask?.cancel()
