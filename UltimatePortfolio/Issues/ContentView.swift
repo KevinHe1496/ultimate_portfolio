@@ -3,22 +3,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    // tenemos acceso a nuestro dataController
-    @EnvironmentObject var dataController: DataController
+    @StateObject var viewModel: ViewModel
     
     var body: some View {
-        List(selection: $dataController.selectedIssue) {
-            ForEach(dataController.issuesForSelectedFilter()) { issue in
+        List(selection: $viewModel.selectedIssue) {
+            ForEach(viewModel.dataController.issuesForSelectedFilter()) { issue in
                 IssueRow(issue: issue)
             }
-            .onDelete(perform: delete)
+            .onDelete(perform: viewModel.delete)
         }
         .navigationTitle("Issues")
         .searchable(
-            text: $dataController.filterText,
-            tokens: $dataController.filterTokens,
+            text: $viewModel.filterText,
+            tokens: $viewModel.filterTokens,
             suggestedTokens: .constant(
-                dataController.suggestedFilterTokens
+                viewModel.suggestedFilterTokens
             ),
             prompt: "Filter issues, or type # to add tags"
         ) { tag in
@@ -28,17 +27,12 @@ struct ContentView: View {
             ContentViewToolbar()
         }
     }
-    /// elimina la fila seleccionada
-    func delete(_ offsets: IndexSet) {
-        let issues = dataController.issuesForSelectedFilter()
-        
-        for offset in offsets {
-            let item = issues[offset]
-            dataController.delete(item)
-        }
+    init(dataController: DataController) {
+        let viewModel = ViewModel(dataController: dataController)
+        _viewModel = StateObject(wrappedValue: viewModel)
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(dataController: .preview)
 }
