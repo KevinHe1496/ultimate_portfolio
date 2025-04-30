@@ -23,6 +23,7 @@
 		C94EB7B52D91D169008B938C /* Tag-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94EB7B42D91D169008B938C /* Tag-CoreDataHelpers.swift */; };
 		C94EB7BD2D9204B5008B938C /* IssueRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94EB7BC2D9204B5008B938C /* IssueRow.swift */; };
 		C968FEA32DB063BF00A5F5E4 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C968FEA22DB063BF00A5F5E4 /* PerformanceTests.swift */; };
+		C97F75992DC28A9C00A8A8C1 /* SidebarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97F75982DC28A9C00A8A8C1 /* SidebarViewModel.swift */; };
 		C9BBA6AD2D8CB39300C1D499 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9BBA6A32D8CB39300C1D499 /* Preview Assets.xcassets */; };
 		C9BBA6AE2D8CB39300C1D499 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9BBA6A52D8CB39300C1D499 /* Assets.xcassets */; };
 		C9BBA6AF2D8CB39300C1D499 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA6A62D8CB39300C1D499 /* ContentView.swift */; };
@@ -87,6 +88,7 @@
 		C97551902D9F47BA00B54DD9 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C97551912D9F47BA00B54DD9 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = "es-419"; path = "es-419.lproj/Localizable.stringsdict"; sourceTree = "<group>"; };
 		C97765732D9F17FC00880CB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C97F75982DC28A9C00A8A8C1 /* SidebarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewModel.swift; sourceTree = "<group>"; };
 		C9B6F9D02DC176C50099C7A4 /* UltimatePortfolioUITests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = UltimatePortfolioUITests.xctestplan; path = UltimatePortfolioUITests/UltimatePortfolioUITests.xctestplan; sourceTree = "<group>"; };
 		C9BBA6A32D8CB39300C1D499 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C9BBA6A52D8CB39300C1D499 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				C9E0EB282D8DD1F5004539E1 /* Filter.swift */,
 				C9E0EB242D8DCFE0004539E1 /* SidebarView.swift */,
+				C97F75982DC28A9C00A8A8C1 /* SidebarViewModel.swift */,
 				C9C037732DA05FC500B6E373 /* SideBarViewToolbar.swift */,
 				C9C0377B2DA0664000B6E373 /* SmartFilterRowView.swift */,
 				C9C0377D2DA066C600B6E373 /* UserFilterRowView.swift */,
@@ -475,6 +478,7 @@
 				C94EB7B32D91C941008B938C /* Issue-CoreDataHelpers.swift in Sources */,
 				C92936D92D970C2A00F0007D /* Bundle-Decodable.swift in Sources */,
 				C9E0EB272D8DCFE6004539E1 /* DetailView.swift in Sources */,
+				C97F75992DC28A9C00A8A8C1 /* SidebarViewModel.swift in Sources */,
 				C9BBA6B02D8CB39300C1D499 /* DataController.swift in Sources */,
 				C9C0377C2DA0664000B6E373 /* SmartFilterRowView.swift in Sources */,
 				C9C037782DA0634300B6E373 /* ContentViewToolbar.swift in Sources */,
