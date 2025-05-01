@@ -11,7 +11,7 @@
 "Filters" = "Szűrők";
 "Smart Filters" = "Intelligens szűrők";
 "All Issues" = "Összes probléma";
-"Recent Issues" = "Legutóbbi problémák";
+"Recent issues" = "Legutóbbi problémák";
 "Tags" = "Címkék";
 "Add tag" = "Címke hozzáadása";
 "Show awards" = "Díjak megjelenítése";
@@ -37,6 +37,8 @@
 "All" = "Összes";
 "Open" = "Nyitott";
 "Closed" = "Lezárt";
+
+"No tags" = "Címkétlen";
 
 "Low" = "Alacsony";
 "Medium" = "Közepes";
@@ -77,6 +79,9 @@
 
 /* AWARDS VIEW */
 "Awards" = "Díjak";
+
+"Locked" = "Zárolt";
+"Unlocked: %@" = "Feloldott: %@";
 
 
 
