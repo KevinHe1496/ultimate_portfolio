@@ -26,6 +26,8 @@ class DataController: ObservableObject {
     /// The lone CloudKit container used to sotre all our data.
     let container: NSPersistentCloudKitContainer
     
+    var spotlightDelegate: NSCoreDataCoreSpotlightDelegate?
+    
     // inicializa con todos los issues
     @Published var selectedFilter: Filter? = Filter.all
     
@@ -123,14 +125,30 @@ class DataController: ObservableObject {
             )
         
         // Carga los almacenes persistentes y maneja errores si ocurren
-        container.loadPersistentStores { _, error in
+        container.loadPersistentStores {
+            [weak self] _,
+            error in
             if let error {
                 fatalError("Fatal error loading store: \(error.localizedDescription)")
             }
             
+            if let description = self?.container.persistentStoreDescriptions.first {
+                description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+                
+                if let coordinator = self?.container.persistentStoreCoordinator {
+                    self?.spotlightDelegate = NSCoreDataCoreSpotlightDelegate(
+                        forStoreWith: description,
+                        coordinator: coordinator
+                    )
+                    
+                    self?.spotlightDelegate?.startSpotlightIndexing()
+                }
+            }
+            
+            
             #if DEBUG
             if CommandLine.arguments.contains("enable-testing") {
-                self.deleteAll()
+                self?.deleteAll()
                 UIView.setAnimationsEnabled(false)
             }
             #endif
@@ -388,5 +406,15 @@ class DataController: ObservableObject {
             return false
         }
     }
-    
+    func issue(with uniqueIdentifier: String) -> Issue? {
+        guard let url = URL(string: uniqueIdentifier) else {
+            return nil
+        }
+        
+        guard let id = container.persistentStoreCoordinator.managedObjectID(forURIRepresentation: url) else {
+            return nil
+        }
+        
+        return try? container.viewContext.existingObject(with: id) as? Issue
+    }
 }

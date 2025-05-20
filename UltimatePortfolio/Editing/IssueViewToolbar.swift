@@ -57,7 +57,7 @@ struct IssueViewToolbar: View {
 
                 let start = CHHapticParameterCurve.ControlPoint(relativeTime: 0, value: 1)
                 let end = CHHapticParameterCurve.ControlPoint(relativeTime: 1, value: 0)
-                
+                // use that curve to control the haptic strength
                 let parameter = CHHapticParameterCurve(parameterID: .hapticIntensityControl, controlPoints: [start, end], relativeTime: 0)
                 
                 let event1 = CHHapticEvent(
@@ -65,7 +65,7 @@ struct IssueViewToolbar: View {
                     parameters: [intensity, sharpness],
                     relativeTime: 0
                 )
-                
+                // create a continuous haptic event starting immediately and lasting one second
                 let event2 = CHHapticEvent(
                     eventType: .hapticContinuous,
                     parameters: [sharpness, intensity],

@@ -4,7 +4,7 @@
 //
 //  Created by Kevin Heredia on 19/3/25.
 //
-
+import CoreSpotlight
 import SwiftUI
 
 @main
@@ -28,6 +28,13 @@ struct UltimatePortfolioApp: App {
                     dataController.save() // Guardar cuando la app pasa a segundo plano
                 }
             }
+            .onContinueUserActivity(CSSearchableItemActionType, perform: loadSpotlightItem)
+        }
+    }
+    func loadSpotlightItem(_ userActivity: NSUserActivity) {
+        if let uniqueIdentifier = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String {
+            dataController.selectedIssue = dataController.issue(with: uniqueIdentifier)
+            dataController.selectedFilter = .all
         }
     }
 }
