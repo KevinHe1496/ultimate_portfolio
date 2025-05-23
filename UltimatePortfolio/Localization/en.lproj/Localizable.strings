@@ -66,6 +66,11 @@
 "Close Issue" = "Close Issue";
 "Re-open Issue" = "Re-open Issue";
 
+/* REMINDERS */
+"Reminders" = "Reminders";
+"Show reminders" = "Show reminders";
+"Reminder time" = "Reminder time";
+
 /* Fields that let the users enter details about a specific issue */
 "Enter the issue title here" = "Enter the issue title here";
 "**Modified:** %@" = "**Modified:** %@";

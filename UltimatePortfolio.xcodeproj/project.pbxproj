@@ -26,6 +26,7 @@
 		C97F75992DC28A9C00A8A8C1 /* SidebarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97F75982DC28A9C00A8A8C1 /* SidebarViewModel.swift */; };
 		C97F759B2DC2CB3600A8A8C1 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97F759A2DC2CB3600A8A8C1 /* ContentViewModel.swift */; };
 		C97F759D2DC2CC6200A8A8C1 /* IssueRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97F759C2DC2CC6200A8A8C1 /* IssueRowViewModel.swift */; };
+		C980864E2DE100FF00BDA5F7 /* DataController-Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C980864D2DE100FF00BDA5F7 /* DataController-Notifications.swift */; };
 		C9BBA6AD2D8CB39300C1D499 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9BBA6A32D8CB39300C1D499 /* Preview Assets.xcassets */; };
 		C9BBA6AE2D8CB39300C1D499 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9BBA6A52D8CB39300C1D499 /* Assets.xcassets */; };
 		C9BBA6AF2D8CB39300C1D499 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA6A62D8CB39300C1D499 /* ContentView.swift */; };
@@ -93,6 +94,7 @@
 		C97F75982DC28A9C00A8A8C1 /* SidebarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewModel.swift; sourceTree = "<group>"; };
 		C97F759A2DC2CB3600A8A8C1 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		C97F759C2DC2CC6200A8A8C1 /* IssueRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueRowViewModel.swift; sourceTree = "<group>"; };
+		C980864D2DE100FF00BDA5F7 /* DataController-Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController-Notifications.swift"; sourceTree = "<group>"; };
 		C9B6F9D02DC176C50099C7A4 /* UltimatePortfolioUITests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = UltimatePortfolioUITests.xctestplan; path = UltimatePortfolioUITests/UltimatePortfolioUITests.xctestplan; sourceTree = "<group>"; };
 		C9BBA6A32D8CB39300C1D499 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C9BBA6A52D8CB39300C1D499 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				C905B7A82DA851A50034EB14 /* Configuration */,
 				C9BBA6AA2D8CB39300C1D499 /* UltimatePortfolioApp.swift */,
 				C9BBA6A72D8CB39300C1D499 /* DataController.swift */,
+				C980864D2DE100FF00BDA5F7 /* DataController-Notifications.swift */,
 				C92936DB2D971B7E00F0007D /* Colors.xcassets */,
 				C9BBA6A52D8CB39300C1D499 /* Assets.xcassets */,
 				C9BBA6A42D8CB39300C1D499 /* Preview Content */,
@@ -479,6 +482,7 @@
 				C9C037762DA0627500B6E373 /* IssueViewToolbar.swift in Sources */,
 				C92936E12D971D1700F0007D /* AwardsView.swift in Sources */,
 				C9C0377E2DA066C600B6E373 /* UserFilterRowView.swift in Sources */,
+				C980864E2DE100FF00BDA5F7 /* DataController-Notifications.swift in Sources */,
 				C94EB7B52D91D169008B938C /* Tag-CoreDataHelpers.swift in Sources */,
 				C9BBA6AF2D8CB39300C1D499 /* ContentView.swift in Sources */,
 				C94EB7B32D91C941008B938C /* Issue-CoreDataHelpers.swift in Sources */,
