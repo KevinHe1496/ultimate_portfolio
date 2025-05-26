@@ -42,8 +42,12 @@ class DataController: ObservableObject {
     @Published var sortType = SortType.dateCreated
     @Published var sortNewestFirst = true
     
+    private var storeTask: Task<Void, Never>?
     // Task no devuelve nada, pero puede lanzar error y es opcional porque inicialmente no tendra nada
     private var saveTask: Task<Void, Error>?
+    
+    ///The UserDetaults suite where we're saving user data.
+    let defaults: UserDefaults
     
     // Propiedad estática para proporcionar un DataController con datos de prueba
     static var preview: DataController = {
@@ -89,9 +93,15 @@ class DataController: ObservableObject {
     ///
     /// Defaults to permanent storage.
     /// - Parameter inMemory: Whether to sotre this data in temporary memory or ot
-    init(inMemory: Bool = false) {
+    /// - Parameter defaults: The UserDefaults suite where user data should be stored.
+    init(inMemory: Bool = false, defaults: UserDefaults = .standard) {
+        self.defaults = defaults
         // Se crea un contenedor persistente llamado "Main"
         container = NSPersistentCloudKitContainer(name: "Main", managedObjectModel: Self.model)
+        
+        storeTask = Task {
+            await monitorTransactions()
+        }
         
         // For testing and previewing purposes, we create a
         // temporary, in-memory database by writing to /dev/null
@@ -348,11 +358,23 @@ class DataController: ObservableObject {
     }
     
     /// agregamos un nuevo tag
-    func newTag() {
+    func newTag() -> Bool {
+        var shouldCreate = fullVersionUnlocked
+        
+        if shouldCreate == false {
+            shouldCreate = count(for: Tag.fetchRequest()) < 3
+        }
+        
+        guard shouldCreate else {
+            return false
+        }
+        
         let tag = Tag(context: container.viewContext)
         tag.id = UUID()
         tag.name = NSLocalizedString("New tag", comment: "Create a new tag")
         save()
+        
+        return true
     }
     
     /// agregamos nuevo issue
