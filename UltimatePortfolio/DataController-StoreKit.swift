@@ -48,7 +48,7 @@ extension DataController {
         }
     }
     
-    /// Finaliza una transacción y actualiza el estado de la versión premium
+    /// maneja las transacciones de forma segura, desbloquea el contenido correctamente y gestiona los reembolsos, todo en un solo lugar.
     @MainActor
     func finalize(_ transaction: Transaction) async {
         if transaction.productID == Self.unlockPremiumProductID {
@@ -56,5 +56,13 @@ extension DataController {
             fullVersionUnlocked = transaction.revocationDate == nil // Activa premium si no fue revocada
             await transaction.finish() // Marca la transacción como procesada
         }
+    }
+    
+    @MainActor
+    func loadProducts() async throws {
+        guard products.isEmpty else { return }
+        
+        try await Task.sleep(for: .seconds(0.2))
+        products = try  await Product.products(for: [Self.unlockPremiumProductID])
     }
 }
