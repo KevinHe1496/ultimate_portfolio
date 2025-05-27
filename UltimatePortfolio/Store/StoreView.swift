@@ -31,7 +31,7 @@ struct StoreView: View {
                         .fontDesign(.rounded)
                         .foregroundStyle(.white)
                     
-                    Text("Get the most out of our app")
+                    Text("Get the most out of the app")
                         .font(.headline)
                         .foregroundStyle(.white)
                 }
@@ -42,10 +42,12 @@ struct StoreView: View {
                     VStack {
                         switch loadState {
                         case .loading:
-                            Text("Loading...")
-                                .font(.headline)
+                            Text("Fetching offers...")
+                                .font(.title2.bold())
+                                .padding(.top, 50)
                             
                             ProgressView()
+                                .controlSize(.large)
                             
                         case .loaded:
                             ForEach(dataController.products) { product in
@@ -76,7 +78,7 @@ struct StoreView: View {
                             
                         case .error:
                             Text("Sorry, there was an error loading our store.")
-                            
+                                .padding(.top, 50)
                             Button("Try again") {
                                 Task {
                                     await load()

@@ -23,6 +23,11 @@
           "description" : "Get access to the full app.",
           "displayName" : "Premium Unlock",
           "locale" : "en_US"
+        },
+        {
+          "description" : "Hozzáférés a teljes alkalmazáshoz",
+          "displayName" : "Prémium feloldás",
+          "locale" : "hu"
         }
       ],
       "productID" : "com.kevinhe.UltimatePortfolioTests.premiumUnlock",
@@ -31,12 +36,16 @@
     }
   ],
   "settings" : {
+    "_askToBuyEnabled" : true,
     "_failTransactionsEnabled" : false,
     "_locale" : "en_US",
     "_storefront" : "USA",
     "_storeKitErrors" : [
       {
-        "current" : null,
+        "current" : {
+          "index" : 2,
+          "type" : "generic"
+        },
         "enabled" : false,
         "name" : "Load Products"
       },
