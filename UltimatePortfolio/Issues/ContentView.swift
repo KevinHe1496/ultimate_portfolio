@@ -6,6 +6,8 @@ struct ContentView: View {
     @Environment(\.requestReview) var requestReview
     @StateObject var viewModel: ViewModel
     
+    private let newIssueActivity = "com.ravecodesolutions.UltimatePortfolio.newIssue"
+    
     var body: some View {
         List(selection: $viewModel.selectedIssue) {
             ForEach(viewModel.dataController.issuesForSelectedFilter()) { issue in
@@ -29,6 +31,11 @@ struct ContentView: View {
         }
         .onAppear(perform: askForReview)
         .onOpenURL(perform: openURL)
+        .userActivity(newIssueActivity) { activity in
+            activity.isEligibleForPrediction = true
+            activity.title = "New Issue"
+        }
+        .onContinueUserActivity(newIssueActivity, perform: resumeActivity)
     }
     init(dataController: DataController) {
         let viewModel = ViewModel(dataController: dataController)
@@ -45,6 +52,10 @@ struct ContentView: View {
         if url.absoluteString.contains("newIssue") {
             viewModel.dataController.newIssue()
         }
+    }
+    
+    func resumeActivity(_ userActivity: NSUserActivity) {
+        viewModel.dataController.newIssue()
     }
 }
 
