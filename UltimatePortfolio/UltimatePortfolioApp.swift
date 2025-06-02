@@ -12,6 +12,8 @@ struct UltimatePortfolioApp: App {
     @StateObject var dataController = DataController()
     @Environment(\.scenePhase) var scenePhase // obseva el cambio de escena de nuestra app
     
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
             NavigationSplitView {
