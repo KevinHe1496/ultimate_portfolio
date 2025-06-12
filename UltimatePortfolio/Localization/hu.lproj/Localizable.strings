@@ -104,3 +104,11 @@
 "Restore Purchases" = "Vásárlások helyreállítása";
 "In-app purchases are disabled" = "Az alkalmazáson belüli vásárlások tiltva vannak";
 "You can't purchase the premium unlock because in-app purchases are disabled on this device.\n\nPlease ask whomever manages your device for assistance." = "Nem vásárolhatja meg a prémium feloldást, mert az alkalmazáson belüli vásárlások letiltva vannak ezen az eszközön.\n\nKérjük, keresse az eszközét kezelő személy segítségét.";
+
+
+/* WIDGETS */
+"Up next…" = "Következő…";
+"Nothing!" = "Semmi!";
+"Your #1 top-priority issue." = "Az #1 elsőbbségi probléma.";
+
+"Your most important issues." = "A legfontosabb problémáid.";

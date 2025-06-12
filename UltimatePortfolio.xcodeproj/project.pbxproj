@@ -42,6 +42,10 @@
 		C99A55022DE4DB5F00AC8B48 /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = C99A55012DE4DB5F00AC8B48 /* Configuration.storekit */; };
 		C99A55042DE4DDAD00AC8B48 /* DataController-StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99A55032DE4DDAD00AC8B48 /* DataController-StoreKit.swift */; };
 		C99A55072DE4F0C800AC8B48 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99A55062DE4F0C800AC8B48 /* StoreView.swift */; };
+		C9B10DD72DFA4E220038E3B6 /* PortfolioWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B10DD42DFA4E220038E3B6 /* PortfolioWidgetBundle.swift */; };
+		C9B10DD82DFA4E220038E3B6 /* SimplePortfolioWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B10DD52DFA4E220038E3B6 /* SimplePortfolioWidget.swift */; };
+		C9B10DD92DFA4E220038E3B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B10DD22DFA4E220038E3B6 /* Assets.xcassets */; };
+		C9B10DDC2DFA4EBB0038E3B6 /* ComplexPortfolioWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B10DDB2DFA4EBB0038E3B6 /* ComplexPortfolioWidget.swift */; };
 		C9BBA6AD2D8CB39300C1D499 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9BBA6A32D8CB39300C1D499 /* Preview Assets.xcassets */; };
 		C9BBA6AE2D8CB39300C1D499 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9BBA6A52D8CB39300C1D499 /* Assets.xcassets */; };
 		C9BBA6AF2D8CB39300C1D499 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA6A62D8CB39300C1D499 /* ContentView.swift */; };
@@ -141,6 +145,11 @@
 		C99A55012DE4DB5F00AC8B48 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		C99A55032DE4DDAD00AC8B48 /* DataController-StoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController-StoreKit.swift"; sourceTree = "<group>"; };
 		C99A55062DE4F0C800AC8B48 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
+		C9B10DD22DFA4E220038E3B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C9B10DD32DFA4E220038E3B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9B10DD42DFA4E220038E3B6 /* PortfolioWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioWidgetBundle.swift; sourceTree = "<group>"; };
+		C9B10DD52DFA4E220038E3B6 /* SimplePortfolioWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePortfolioWidget.swift; sourceTree = "<group>"; };
+		C9B10DDB2DFA4EBB0038E3B6 /* ComplexPortfolioWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexPortfolioWidget.swift; sourceTree = "<group>"; };
 		C9B6F9D02DC176C50099C7A4 /* UltimatePortfolioUITests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = UltimatePortfolioUITests.xctestplan; path = UltimatePortfolioUITests/UltimatePortfolioUITests.xctestplan; sourceTree = "<group>"; };
 		C9BBA6A32D8CB39300C1D499 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C9BBA6A52D8CB39300C1D499 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -169,25 +178,7 @@
 		C9F1ED462D8B97EC006AAF11 /* UltimatePortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		C959A5972DF246250093298B /* Exceptions for "PortfolioWidget" folder in "PortfolioWidgetExtension" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = C959A5822DF246250093298B /* PortfolioWidgetExtension */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		C959A5892DF246250093298B /* PortfolioWidget */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				C959A5972DF246250093298B /* Exceptions for "PortfolioWidget" folder in "PortfolioWidgetExtension" target */,
-			);
-			path = PortfolioWidget;
-			sourceTree = "<group>";
-		};
 		C9CE5F9D2DC1667800989125 /* UltimatePortfolioUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = UltimatePortfolioUITests;
@@ -339,6 +330,18 @@
 			path = Store;
 			sourceTree = "<group>";
 		};
+		C9B10DD62DFA4E220038E3B6 /* PortfolioWidget */ = {
+			isa = PBXGroup;
+			children = (
+				C9B10DD22DFA4E220038E3B6 /* Assets.xcassets */,
+				C9B10DD32DFA4E220038E3B6 /* Info.plist */,
+				C9B10DD42DFA4E220038E3B6 /* PortfolioWidgetBundle.swift */,
+				C9B10DD52DFA4E220038E3B6 /* SimplePortfolioWidget.swift */,
+				C9B10DDB2DFA4EBB0038E3B6 /* ComplexPortfolioWidget.swift */,
+			);
+			path = PortfolioWidget;
+			sourceTree = "<group>";
+		};
 		C9BBA6A42D8CB39300C1D499 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,7 +392,7 @@
 				C9BBA6AB2D8CB39300C1D499 /* UltimatePortfolio */,
 				C938924D2DA9B5A80094C753 /* UltimatePortfolioTests */,
 				C9CE5F9D2DC1667800989125 /* UltimatePortfolioUITests */,
-				C959A5892DF246250093298B /* PortfolioWidget */,
+				C9B10DD62DFA4E220038E3B6 /* PortfolioWidget */,
 				C959A5842DF246250093298B /* Frameworks */,
 				C9F1ED472D8B97EC006AAF11 /* Products */,
 			);
@@ -440,9 +443,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				C959A5892DF246250093298B /* PortfolioWidget */,
 			);
 			name = PortfolioWidgetExtension;
 			packageProductDependencies = (
@@ -560,6 +560,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9B10DD92DFA4E220038E3B6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,10 +608,13 @@
 			files = (
 				C959A59D2DF249190093298B /* Filter.swift in Sources */,
 				C959A5992DF248030093298B /* Main.xcdatamodeld in Sources */,
+				C9B10DD72DFA4E220038E3B6 /* PortfolioWidgetBundle.swift in Sources */,
+				C9B10DD82DFA4E220038E3B6 /* SimplePortfolioWidget.swift in Sources */,
 				C959A59A2DF248280093298B /* DataController.swift in Sources */,
 				C959A5A02DF2497F0093298B /* DataController-StoreKit.swift in Sources */,
 				C959A59B2DF2483B0093298B /* Tag-CoreDataHelpers.swift in Sources */,
 				C959A59C2DF2483B0093298B /* Issue-CoreDataHelpers.swift in Sources */,
+				C9B10DDC2DFA4EBB0038E3B6 /* ComplexPortfolioWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -766,7 +770,7 @@
 				INFOPLIST_FILE = PortfolioWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PortfolioWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -796,7 +800,7 @@
 				INFOPLIST_FILE = PortfolioWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PortfolioWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

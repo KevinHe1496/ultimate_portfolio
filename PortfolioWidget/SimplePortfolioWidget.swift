@@ -8,7 +8,7 @@
 import WidgetKit
 import SwiftUI
 
-struct Provider: TimelineProvider {
+struct SimpleProvider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date.now, issues: [.example])
     }
@@ -27,7 +27,7 @@ struct Provider: TimelineProvider {
     
     func loadIssues() -> [Issue] {
         let dataController = DataController()
-        let request = dataController.fetchRequestForTopIssues(count: 1)
+        let request = dataController.fetchRequestForTopIssues(count: 7)
         return dataController.results(for: request)
     }
 }
@@ -37,8 +37,8 @@ struct SimpleEntry: TimelineEntry {
     let issues: [Issue]
 }
 
-struct PortfolioWidgetEntryView: View {
-    var entry: Provider.Entry
+struct SimplePortfolioWidgetEntryView: View {
+    var entry: SimpleProvider.Entry
 
     var body: some View {
         VStack {
@@ -54,27 +54,28 @@ struct PortfolioWidgetEntryView: View {
     }
 }
 
-struct PortfolioWidget: Widget {
-    let kind: String = "PortfolioWidget"
+struct SimplePortfolioWidget: Widget {
+    let kind: String = "SimplePortfolioWidget"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+        StaticConfiguration(kind: kind, provider: SimpleProvider()) { entry in
             if #available(iOS 17.0, *) {
-                PortfolioWidgetEntryView(entry: entry)
+                SimplePortfolioWidgetEntryView(entry: entry)
                     .containerBackground(.fill.tertiary, for: .widget)
             } else {
-                PortfolioWidgetEntryView(entry: entry)
+                SimplePortfolioWidgetEntryView(entry: entry)
                     .padding()
                     .background()
             }
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Up next...")
+        .description("Your most important issues.")
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge])
     }
 }
 
 #Preview(as: .systemSmall) {
-    PortfolioWidget()
+    SimplePortfolioWidget()
 } timeline: {
     SimpleEntry(date: .now, issues: [.example])
     SimpleEntry(date: .now, issues: [.example])

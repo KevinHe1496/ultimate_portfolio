@@ -111,3 +111,11 @@
 "Restore Purchases" = "Restore Purchases";
 "In-app purchases are disabled" = "In-app purchases are disabled";
 "You can't purchase the premium unlock because in-app purchases are disabled on this device.\n\nPlease ask whomever manages your device for assistance." = "You can't purchase the premium unlock because in-app purchases are disabled on this device.\n\nPlease ask whomever manages your device for assistance.";
+
+
+/* WIDGETS */
+"Up next…" = "Up next…";
+"Nothing!" = "Nothing!";
+"Your #1 top-priority issue." = "Your #1 top-priority issue.";
+
+"Your most important issues." = "Your most important issues.";

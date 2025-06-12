@@ -30,7 +30,7 @@ struct ContentView: View {
             ContentViewToolbar()
         }
         .onAppear(perform: askForReview)
-        .onOpenURL(perform: openURL)
+        .onOpenURL(perform: viewModel.openURL)
         .userActivity(newIssueActivity) { activity in
             activity.isEligibleForPrediction = true
             activity.title = "New Issue"
@@ -48,11 +48,7 @@ struct ContentView: View {
         }
     }
     
-    func openURL(_ url: URL) {
-        if url.absoluteString.contains("newIssue") {
-            viewModel.dataController.newIssue()
-        }
-    }
+
     
     func resumeActivity(_ userActivity: NSUserActivity) {
         viewModel.dataController.newIssue()
