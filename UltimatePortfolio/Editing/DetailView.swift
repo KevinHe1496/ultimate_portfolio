@@ -20,7 +20,7 @@ struct DetailView: View {
             }
         }
         .navigationTitle("Details")
-        .navigationBarTitleDisplayMode(.inline)
+        .inlineNavigationBar()
     }
 }
 

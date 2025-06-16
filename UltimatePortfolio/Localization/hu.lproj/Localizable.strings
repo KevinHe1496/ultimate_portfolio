@@ -112,3 +112,9 @@
 "Your #1 top-priority issue." = "Az #1 elsőbbségi probléma.";
 
 "Your most important issues." = "A legfontosabb problémáid.";
+
+"Status" = "Állapot";
+"Sort Order" = "Rendezési sorrend";
+"Title" = "Cím";
+"Description" = "Leírás";
+"Close" = "Bezár";

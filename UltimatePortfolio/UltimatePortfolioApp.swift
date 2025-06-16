@@ -11,8 +11,9 @@ import SwiftUI
 struct UltimatePortfolioApp: App {
     @StateObject var dataController = DataController()
     @Environment(\.scenePhase) var scenePhase // obseva el cambio de escena de nuestra app
-    
+    #if os(iOS)
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    #endif
     
     var body: some Scene {
         WindowGroup {

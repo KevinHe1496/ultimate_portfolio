@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+#if os(iOS)
 class SceneDelegate: NSObject, UIWindowSceneDelegate {
     func windowScene(
         _ windowScene: UIWindowScene,
@@ -35,3 +36,4 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
         }
     }
 }
+#endif
