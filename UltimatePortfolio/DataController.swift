@@ -7,7 +7,10 @@
 import StoreKit
 import CoreData
 import SwiftUI
+#if canImport(WidgetKit)
 import WidgetKit
+#endif
+
 
 enum SortType: String {
     case dateCreated = "creationDate"
@@ -229,23 +232,13 @@ class DataController: ObservableObject {
         if container.viewContext.hasChanges {
             // Intenta guardar los cambios, ignorando posibles errores con `try?`
             try? container.viewContext.save()
+#if canImport(WidgetKit)
             WidgetCenter.shared.reloadAllTimelines()
+            #endif
         }
     }
     
-    /// Metodo que guarda los cuambios depues de 3 segundos
-    func queueSave() {
-        // cancelamos la tarea si se produce otro cambio
-        saveTask?.cancel()
-        // guardamos la nueva tarea en SaveTask
-        saveTask = Task { @MainActor in
-            // suspendemos 3 segundos
-            try await Task.sleep(for: .seconds(3))
-            // guardamos
-            save()
-            
-        }
-    }
+
     
     /// Método para eliminar un objeto de Core Data
     func delete(_ object: NSManagedObject) {

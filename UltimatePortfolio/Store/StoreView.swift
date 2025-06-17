@@ -12,7 +12,9 @@ struct StoreView: View {
     enum LoadState {
         case loading, loaded, error
     }
-    
+#if os(visionOS)
+    @Environment(\.purchase) var purchaseAction
+#endif
     @EnvironmentObject var dataController: DataController // Accede al controlador de datos compartido
     @Environment(\.dismiss) var dismiss // Cierra la vista actual cuando se llama
     @State private var loadState = LoadState.loading
@@ -130,11 +132,16 @@ struct StoreView: View {
         }
         
         Task { @MainActor in
-            do {
-                try await dataController.purchase(product) // Compra y valida el producto
-            } catch {
-                print("Compra falló: \(error.localizedDescription)") // Muestra errores si ocurren
+            #if os(visionOS)
+            let result = try await purchaseAction(product)
+            
+            if case let .success(validation) = result {
+                try await dataController.finalize(validation.payloadValue) // Verifica y finaliza si fue exitosa
             }
+            #else
+            try await dataController.purchase(product) // Compra y valida el producto
+            #endif
+            
         }
     }
     

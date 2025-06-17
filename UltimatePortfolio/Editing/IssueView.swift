@@ -73,7 +73,7 @@ struct IssueView: View {
         
         // detecta los cambios recibidos
         .onReceive(issue.objectWillChange) { _ in
-            dataController.queueSave()
+            dataController.save()
         }
         .onSubmit(dataController.save)
         .toolbar {
