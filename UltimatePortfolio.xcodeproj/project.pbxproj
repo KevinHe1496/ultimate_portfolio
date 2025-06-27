@@ -101,6 +101,10 @@
 		C99A55022DE4DB5F00AC8B48 /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = C99A55012DE4DB5F00AC8B48 /* Configuration.storekit */; };
 		C99A55042DE4DDAD00AC8B48 /* DataController-StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99A55032DE4DDAD00AC8B48 /* DataController-StoreKit.swift */; };
 		C99A55072DE4F0C800AC8B48 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99A55062DE4F0C800AC8B48 /* StoreView.swift */; };
+		C9AE48FB2E0F32AE0000F0B0 /* DataController-Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE48FA2E0F32AE0000F0B0 /* DataController-Testing.swift */; };
+		C9AE48FC2E0F32AE0000F0B0 /* DataController-Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE48FA2E0F32AE0000F0B0 /* DataController-Testing.swift */; };
+		C9AE48FD2E0F32DF0000F0B0 /* DataController-Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE48FA2E0F32AE0000F0B0 /* DataController-Testing.swift */; };
+		C9AE48FE2E0F32DF0000F0B0 /* DataController-Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE48FA2E0F32AE0000F0B0 /* DataController-Testing.swift */; };
 		C9B10DD72DFA4E220038E3B6 /* PortfolioWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B10DD42DFA4E220038E3B6 /* PortfolioWidgetBundle.swift */; };
 		C9B10DD82DFA4E220038E3B6 /* SimplePortfolioWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B10DD52DFA4E220038E3B6 /* SimplePortfolioWidget.swift */; };
 		C9B10DD92DFA4E220038E3B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B10DD22DFA4E220038E3B6 /* Assets.xcassets */; };
@@ -238,6 +242,7 @@
 		C99A55012DE4DB5F00AC8B48 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		C99A55032DE4DDAD00AC8B48 /* DataController-StoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController-StoreKit.swift"; sourceTree = "<group>"; };
 		C99A55062DE4F0C800AC8B48 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
+		C9AE48FA2E0F32AE0000F0B0 /* DataController-Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController-Testing.swift"; sourceTree = "<group>"; };
 		C9B10DD22DFA4E220038E3B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9B10DD32DFA4E220038E3B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9B10DD42DFA4E220038E3B6 /* PortfolioWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioWidgetBundle.swift; sourceTree = "<group>"; };
@@ -517,6 +522,7 @@
 				C9BBA6A52D8CB39300C1D499 /* Assets.xcassets */,
 				C9BBA6A42D8CB39300C1D499 /* Preview Content */,
 				C965A9A72E00D88A00AA1F3E /* Credits.rtf */,
+				C9AE48FA2E0F32AE0000F0B0 /* DataController-Testing.swift */,
 			);
 			path = UltimatePortfolio;
 			sourceTree = "<group>";
@@ -835,6 +841,7 @@
 				C959A5992DF248030093298B /* Main.xcdatamodeld in Sources */,
 				C9B10DD72DFA4E220038E3B6 /* PortfolioWidgetBundle.swift in Sources */,
 				C9B10DD82DFA4E220038E3B6 /* SimplePortfolioWidget.swift in Sources */,
+				C9AE48FD2E0F32DF0000F0B0 /* DataController-Testing.swift in Sources */,
 				C959A59A2DF248280093298B /* DataController.swift in Sources */,
 				C959A5A02DF2497F0093298B /* DataController-StoreKit.swift in Sources */,
 				C959A59B2DF2483B0093298B /* Tag-CoreDataHelpers.swift in Sources */,
@@ -851,6 +858,7 @@
 				C965A99C2E00C5C600AA1F3E /* DataController.swift in Sources */,
 				C965A99D2E00C5C600AA1F3E /* Tag-CoreDataHelpers.swift in Sources */,
 				C965A99E2E00C5C600AA1F3E /* SimplePortfolioWidget.swift in Sources */,
+				C9AE48FE2E0F32DF0000F0B0 /* DataController-Testing.swift in Sources */,
 				C965A99F2E00C5C600AA1F3E /* DataController-StoreKit.swift in Sources */,
 				C965A9A02E00C5C600AA1F3E /* Issue-CoreDataHelpers.swift in Sources */,
 				C965A9A12E00C5C600AA1F3E /* PortfolioWidgetBundle.swift in Sources */,
@@ -895,6 +903,7 @@
 				C97176672E01F7360007E87F /* Filter.swift in Sources */,
 				C93E2FEB2E02030200BFE2BE /* ToolbarItemPlacement.swift in Sources */,
 				C97176682E01F7360007E87F /* Tag-CoreDataHelpers.swift in Sources */,
+				C9AE48FB2E0F32AE0000F0B0 /* DataController-Testing.swift in Sources */,
 				C93E2FE52E01FA9100BFE2BE /* NumberBagde.swift in Sources */,
 				C97176692E01F7360007E87F /* SideBarViewToolbar.swift in Sources */,
 				C971764B2E01F7000007E87F /* InlineNavigationBar.swift in Sources */,
@@ -944,6 +953,7 @@
 				C94EB7BD2D9204B5008B938C /* IssueRow.swift in Sources */,
 				C93E2FEC2E02030200BFE2BE /* ToolbarItemPlacement.swift in Sources */,
 				C9BBA6B22D8CB39300C1D499 /* UltimatePortfolioApp.swift in Sources */,
+				C9AE48FC2E0F32AE0000F0B0 /* DataController-Testing.swift in Sources */,
 				C93E2FE42E01FA9100BFE2BE /* NumberBagde.swift in Sources */,
 				C99A55072DE4F0C800AC8B48 /* StoreView.swift in Sources */,
 				C97F759D2DC2CC6200A8A8C1 /* IssueRowViewModel.swift in Sources */,
@@ -1073,7 +1083,7 @@
 				INFOPLIST_FILE = PortfolioWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PortfolioWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1103,7 +1113,7 @@
 				INFOPLIST_FILE = PortfolioWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PortfolioWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1253,7 +1263,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3MN9V687D7;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinhe.UltimatePortfolioUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1272,7 +1282,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3MN9V687D7;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinhe.UltimatePortfolioUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1430,7 +1440,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
@@ -1475,7 +1485,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.0;

@@ -38,16 +38,7 @@ extension DataController {
             }
         }
     }
-    #if !os(visionOS)
-    /// Realiza la compra de un producto usando StoreKit 2
-    func purchase(_ product: Product) async throws {
-        let result = try await product.purchase() // Inicia el proceso de compra
-        
-        if case let .success(validation) = result {
-            try await finalize(validation.payloadValue) // Verifica y finaliza si fue exitosa
-        }
-    }
-    #endif
+
     /// maneja las transacciones de forma segura, desbloquea el contenido correctamente y gestiona los reembolsos, todo en un solo lugar.
     @MainActor
     func finalize(_ transaction: Transaction) async {

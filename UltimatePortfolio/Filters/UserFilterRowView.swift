@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct UserFilterRowView: View {
+    @EnvironmentObject var dataController: DataController
     var filter: Filter
     var rename: (Filter) -> Void
     var delete: (Filter) -> Void
@@ -15,7 +16,7 @@ struct UserFilterRowView: View {
     
     var body: some View {
         NavigationLink(value: filter) {
-            Label(filter.name, systemImage: filter.icon)
+            Label(filter.tag?.name ?? "No name", systemImage: filter.icon)
                 .numberBadge(filter.activeIssuesCount)
                 .contextMenu {
                     Button {

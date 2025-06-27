@@ -21,4 +21,5 @@ struct NoIssueView: View {
 
 #Preview {
     NoIssueView()
+        .environmentObject(DataController(inMemory: true))
 }

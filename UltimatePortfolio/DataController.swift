@@ -176,16 +176,7 @@ class DataController: ObservableObject {
                 }
                 #endif
             }
-            
-            
-            #if DEBUG
-            if CommandLine.arguments.contains("enable-testing") {
-                self?.deleteAll()
-                #if os(iOS)
-                UIView.setAnimationsEnabled(false)
-                #endif
-            }
-            #endif
+            self?.checkForTestEnvironment()
         }
     }
     /// Le dice a coredata que queremos ser notificamos cuando el store haya cambiado
